@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CTA/COT Proxy Monitor</title>
+  <meta name="description" content="CTA Proxy Trigger와 CFTC COT 신호를 매일 저장하고 확인하는 정적 대시보드" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./config.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="brand">
+          <div class="brand-mark">CTA</div>
+          <div>
+            <p class="eyebrow">Positioning dashboard</p>
+            <h1>CTA/COT Proxy Monitor</h1>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <nav class="tabs" aria-label="트리거 상태">
+            <span class="tab active" id="triggerBadge">확인 중</span>
+          </nav>
+          <div class="date-picker">
+            <label for="reportDate">날짜</label>
+            <select id="reportDate"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <section class="hero-copy">
+          <p class="kicker">Daily CTA Proxy Trigger · Weekly COT Signals</p>
+          <h2 id="heroTitle">CTA 포지셔닝 모니터</h2>
+          <p class="hero-text">
+            리포트 원문보다 데이터 상태를 먼저 봅니다. 각 블록이 공식·캐시·프록시·미연결 중
+            어디에 있는지 확인하고, 필요한 경우 선택 날짜 리포트를 저장합니다.
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label">업데이트 기준</span>
+              <strong id="updatedAt">불러오는 중</strong>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">데이터 생성</span>
+              <strong id="dataNote">불러오는 중</strong>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">히스토리</span>
+              <strong id="historyCount">불러오는 중</strong>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">저장 시각</span>
+              <strong id="syncStatus">불러오는 중</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="hero-panel">
+          <p class="panel-label">Quick read</p>
+          <div class="signal-stack" id="signalStack"></div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="stat-grid" id="statGrid"></section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Source preflight</p>
+            <h3>데이터 소스 연결 상태</h3>
+          </div>
+          <p class="panel-note">실패 로그 대신 연결 가능 여부와 다음 조치를 먼저 봅니다.</p>
+        </div>
+        <div class="source-grid" id="sourceGrid"></div>
+      </section>
+
+      <section class="panel" id="actionPanel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Next actions</p>
+            <h3>확인 제한을 줄이는 순서</h3>
+          </div>
+        </div>
+        <ol class="action-list" id="recommendations"></ol>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Data blocks</p>
+            <h3>모니터링 블록별 가용성</h3>
+          </div>
+          <p class="panel-note">전부 비어 있는 표는 원문으로 내리고, 블록 상태를 우선 표시합니다.</p>
+        </div>
+        <div class="block-grid" id="blockGrid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">History</p>
+            <h3>저장된 리포트</h3>
+          </div>
+        </div>
+
+        <div class="report-grid">
+          <div class="report-list" id="reportList"></div>
+          <div>
+            <div class="copy-row">
+              <button id="copyBtn" type="button">원문 복사</button>
+              <button id="downloadBtn" type="button">선택 날짜 저장</button>
+            </div>
+            <pre id="rawReport">불러오는 중</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./data/data.js"></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>

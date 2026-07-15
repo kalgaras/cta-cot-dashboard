@@ -1,0 +1,90 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 확인 제한 / (리스크자산) 신고가 갱신 vs (원자재·금리) 완화
+
+(기준일 KST) 2026-05-28
+메모:
+- 외부 DNS/소켓 제한으로 “공식/공신력 원천에서 확인 가능한 값만” 반영했습니다.
+- 미 증시 지수: 2026-05-27(수) 마감(AP/Reuters).
+- STOXX 600 / Nikkei / Nasdaq 100: Reuters(재배포) 및 MarketScreener(프록시)에서 2026-05-27 기준 확인.
+- CTA 프록시(ETF 종가): DBMF는 최신 일자(2026-05-14)까지만 확인 가능, KMLM/CTA는 2026-05-22까지만 확인 가능 → 3~5일 트리거 재판정은 “확인 제한”.
+- COT는 (보고/포지션 기준) 2026-05-19가 최신이며, 이는 2026-05-28 기준 “가장 최근 CFTC 공개분”입니다.
+
+① DAILY CTA Proxy Trigger
+`Date       | Asset / Index                           | Value     | D1 Δ%   | D3      | D5      | Δ Z | Confirm
+2026-05-28  | SG CTA Trend Index (proxy: DBMF/KMLM/CTA) | NA       | NA      | NA      | NA      | NA  | 확인 제한(비공개/최신 시세 미확인)
+2026-05-28  | SG Short-Term Traders (proxy: DBMF)       | NA       | NA      | NA      | NA      | NA  | 확인 제한(최신 시세 미확인)
+2026-05-28  | Barclay BTOP50                            | NA       | NA      | NA      | NA      | NA  | 확인 제한(일간 레벨 미확인)
+2026-05-14  | DBMF ETF (proxy)                          | 31.24    | +0.39%  | NA      | NA      | NA  | 확인(프록시·일자 오래됨)
+2026-05-22  | KMLM ETF (proxy)                          | 29.22    | +0.09%  | -2.40%  | -2.08%  | NA  | 확인(프록시·최신 제한)
+2026-05-22  | Simplify CTA ETF (proxy)                  | 30.70    | -0.78%  | -5.07%  | -4.12%  | NA  | 확인(프록시·최신 제한)`
+
+- Trigger 판정(프록시): 최신 종가가 갱신되지 않아 “발생/미발생” 재판정 불가(확인 제한)
+- 체크포인트: (1) CTA(ETF) 하락 누적이 여전히 유지되는지 (2) DBMF/KMLM 동행 여부를 3~5일 창으로 재확인 필요
+
+② Weekly COT Signals (최신 CFTC 기준: 2026-05-19, Leveraged Funds 프록시)
+`Date       | Asset                | Value(Net) | WoW Δ     | %       | Δ Z | Unwind? | Confirm
+2026-05-19  | S&P 500 (ES)         | -401,554   | +30,884   | +7.1%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | USD Index (DX)       | -11,716    | -6,965    | -146.6% | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 2Y               | -1,878,632 | +69,197   | +3.6%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 5Y               | -2,306,447 | +42,758   | +1.8%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 10Y              | -1,952,737 | +4,205    | +0.2%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 30Y(프록시: UB)  | -886,063   | -12,834   | -1.4%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)`
+
+- 표기: Net/WoW Δ/%는 “Leveraged Funds (Long-Short)” 기준(보고서/자금군별 정의 차이 주의)
+
+③ 종합 Alert
+- CTA 시스템(프록시): “neutral/no trigger (판정 보류)” — 핵심 입력(CTA ETF 최신 종가) 확인 제한
+- Context
+  - 주가지수는 신고가(리스크온) vs 유가 급락/금리 하락(인플레 압력 완화 신호)로 “리스크 프리미엄 압축” 국면 지속
+  - CFTC(05/19 기준)에서는 Lev Funds의 ES net short 축소(+30.9k) → 주가지수 선물 숏 익스포저 축소 방향
+  - UST(2Y/5Y/10Y) Lev net short 축소(=숏 줄임) vs Ultra UST Bond는 net short 확대(=-12.8k) → 듀레이션 포지션은 혼재
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수 (2026-05-27 마감)
+`As of      | Index        | Level      | Chg
+2026-05-27  | S&P 500      | 7,520.36   | +0.02%
+2026-05-27  | Nasdaq 100   | 29,973.57  | -0.09%
+2026-05-27  | Dow          | 50,644.28  | +0.36%
+2026-05-27  | Russell 2000 | 2,919.94   | ~0.00%
+2026-05-27  | STOXX 600    | 628.18     | +0.03% (proxy)
+2026-05-27  | Nikkei 225   | 64,999.41  | ~0.00%`
+
+(2) 금리: U.S. Treasury (2026-05-27; Treasury 원문 접근 제한 → Treasury 기반 재가공(slickcharts) 사용)
+`Date       | 2Y    | 5Y    | 10Y   | 30Y   | D1(대략)
+2026-05-27  | 4.00  | 4.17  | 4.48  | 5.01  | -1~-2bp`
+
+(3) FX (2026-05-27 스냅샷)
+- DXY: 99.16
+- EURUSD: 1.1629
+- USDJPY: 159.46
+
+(4) 원자재 (2026-05-27 스냅샷)
+- WTI: 89.41
+- Brent: 92.92
+- Gold: 4,487.25
+
+(5) 주식 변동성
+- VIX: 16.29 (스냅샷)
+- VVIX: 89.55 (05/26 EDT 종가; 최신 반영 지연 가능)
+
+(6) 미 증시 breadth 요약 (2026-05-27, Reuters)
+- NYSE: Adv/Dec 1.13:1, New High/Low 453/99
+- Nasdaq: Adv/Dec 2,420/2,498, New High/Low 169/74
+- S&P 500: New High/Low 37/8
+
+(7) 향후 24~48시간 주요 이벤트(ET, Reuters/BEA 일정 참고)
+- 05/28(목): PCE(개인소비지출물가지수) 예정(시장 주시 포인트)
+
+(8) 실행 가능한 핵심 요약(모니터링 관점)
+- (CTA) CTA ETF(CTA/DBMF/KMLM) 최신 3~5일 누적 수익률을 다시 확보해 트리거를 “재판정” (현재는 확인 제한)
+- (매크로) 유가 급락 + 금리 하락 구간에서 “변동성 재확대(VIX)”가 동반되는지 체크(현재 VIX는 낮은 편)
+
+데이터 소스(공신력 우선, 일부 프록시):
+- 미 증시 주요 지수(05/27): AP “How major US stock indexes fared Wednesday 5/27/2026”
+- Nasdaq 100 및 breadth(05/27): Reuters(재배포, MarketScreener)
+- STOXX 600(05/27): MarketScreener quote (proxy)
+- Nikkei 225(05/27): Reuters(재배포, MarketScreener)
+- 금리(05/27): slickcharts(“Treasury.gov Daily Treasury Par Yield Curve Rates” 기반 재가공)
+- FX/원자재/VIX(05/27): Investing.com 스냅샷(프록시)
+- VVIX(05/26): Webull 스냅샷(프록시)
+- COT(05/19): CFTC “Traders in Financial Futures – Futures Only”
+

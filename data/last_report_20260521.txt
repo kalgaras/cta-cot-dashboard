@@ -1,0 +1,103 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 확인 제한 / (CTA 프록시 시세 확인 제한, COT·마켓은 공신력 원천 기반)
+
+- 실행 기준일(KST): 2026-05-21 (목)
+- 마켓 스냅샷 기준: 2026-05-20 (미국장 종가, ET 기준) / 유럽·일본은 2026-05-20 종가
+- 원천(가능한 범위): CFTC(COT), U.S. Treasury(수익률), Nasdaq Indexes(NDX), AP(미 지수), Nikkei Indexes(니케이), TradingEconomics(FX/원자재/금), Investing(주요 FX 실시간)
+
+① DAILY CTA Proxy Trigger
+```
+기준일         Asset / Index                     Value     D1 Δ%   Δ Z-score  Confirmation
+----------  -------------------------------  ----------  -------  ---------  ------------
+2026-05-21  SG CTA Trend Index               NA          NA       NA         확인 제한
+2026-05-21  SG Short-Term Traders Index      NA          NA       NA         확인 제한
+2026-05-21  Barclay BTOP50                   NA          NA       NA         확인 제한
+2026-05-21  DBMF ETF                         NA          NA       NA         확인 제한
+2026-05-21  KMLM ETF                         NA          NA       NA         확인 제한
+```
+- 판정: 유효 데이터 부족 → Trigger 판정 불가(확인 제한)
+- 트리거 기준(프록시): D1≤-1% 또는 |Z|≥1.0, 3D≤-2%, 5D≤-3%.
+- 메모: SG/BTOP50는 로컬 CSV(`data/cta_proxies.csv`) 입력이 없으면 공신력 있는 무료 시세로 확인이 어려움.
+
+② Weekly COT Signals (최신 CFTC 기준)
+- 최신 공개: 2026-05-12(화) 포지션, 2026-05-15(금) 15:30 ET 공개. 다음 공개 예정: 2026-05-22(금).
+```
+Report Date   Asset           Value(Net)    WoW Δ     %      Δ Z-score  Unwind?  Confirmation
+----------  --------------  ----------  --------  -----  ---------  -------  ------------
+2026-05-12  S&P 500 (ES)    -143,835    -39,950   NA     NA         ❌        확인(CFTC)
+2026-05-12  USD Index (DX)  +3,187      +2,494    NA     NA         ❌        확인(CFTC)
+2026-05-12  UST 10Y         NA          NA        NA     NA         ❌        확인 제한
+2026-05-12  UST 2Y          NA          NA        NA     NA         ❌        확인 제한
+2026-05-12  UST 5Y          NA          NA        NA     NA         ❌        확인 제한
+2026-05-12  UST 30Y         NA          NA        NA     NA         ❌        확인 제한
+```
+- 해석(간단)
+  - ES: 비상업(Non-Commercial) 순포지션은 순숏 유지(주간 기준 순숏 확대).
+  - DX: 비상업 순포지션은 순롱 유지(주간 기준 순롱 확대).
+
+③ 종합 Alert
+- CTA 시스템 상태: CTA 프록시 지표(핵심 입력) 공백 → Proxy Trigger는 “판정 보류(확인 제한)”
+- Context
+  - 리스크온 반등: 05/20 미국 주식은 4거래일 하락 후 반등(S&P +1.1%, Russell +2.6%).
+  - 금리: 05/20 UST 10Y 4.57% / 30Y 5.11% (고금리 레벨 유지).
+  - 유가 급락: WTI/Brent 일간 -5% 내외(공급 기대/협상 뉴스 영향) → 인플레 압력 단기 완화 신호.
+- 국면 판단: neutral/no trigger (CTA 입력 공백으로 확신도 낮음)
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수
+```
+기준일(ET)     Index                 Close       D1       Confirmation
+----------  --------------------  ---------  -------  ------------
+2026-05-20  S&P 500               7,432.97   +1.10%   확인(AP)
+2026-05-20  Nasdaq 100 (NDX)      29,297.70  +1.67%   확인(Nasdaq)*
+2026-05-20  Dow                   50,009.35  +1.30%   확인(AP)
+2026-05-20  Russell 2000          2,817.36   +2.60%   확인(AP)
+2026-05-20  STOXX 600             620.29     +1.46%   확인(유럽 종가 보도)
+2026-05-20  Nikkei 225            59,804.41  -1.23%   확인(니케이)
+```
+* NDX 일간 변동률은 Nasdaq 공시값(Net Change)을 이용해 산출(공식 종가/전일값이 텍스트로 함께 노출되지 않아 %는 계산치).
+
+(2) 금리 (Daily Treasury Par Yield Curve Rates, %)
+```
+Date(ET)     2Y    5Y    10Y   30Y   Confirmation
+----------  ----  ----  ----  ----  ------------
+2026-05-20  4.04  4.22  4.57  5.11  확인(미 재무부)
+```
+
+(3) FX
+```
+기준일(ET)     FX      Value     D1       Confirmation
+----------  ------  -------  -------  ------------
+2026-05-20  DXY     99.11    -0.21%   확인(TradingEconomics)
+2026-05-20  EURUSD  1.1629   +0.03%   실시간(Investing)
+2026-05-20  USDJPY  158.84   -0.04%   실시간(Investing)
+```
+
+(4) 원자재
+```
+기준일(ET)     Commodity  Value     D1       Confirmation
+----------  ---------  ------  -------  ------------
+2026-05-20  WTI        98.99   -4.95%   확인(TradingEconomics)
+2026-05-20  Brent      105.19  -5.24%   확인(TradingEconomics)
+2026-05-20  Gold       4,528.22 +0.88%  확인(TradingEconomics)
+```
+
+(5) 주식 변동성
+```
+기준일(ET)     Vol   Value   D1       Confirmation
+----------  ----  -----  -------  ------------
+2026-05-20  VIX   NA     NA       확인 제한 (최신 확정치: 2026-05-19=18.06)
+2026-05-20  VVIX  NA     NA       확인 제한
+```
+
+(6) 미 증시 breadth
+- 확인 제한(공식 breadth feed/무료 집계 접근 제한)
+
+(7) 향후 24~48시간 주요 이벤트 (ET 기준)
+- 05/21(목) 08:30: Initial Jobless Claims(주간 신규 실업수당 청구)
+- 05/22(금) 15:30: CFTC COT(주간 포지션) 공개(05/19 기준분)
+
+(8) 실행 가능한 핵심 요약
+- (체크 1) CTA 프록시 입력 복구가 최우선: `data/cta_proxies.csv`(SG/BTOP50) + DBMF/KMLM 시세 확보 시 Trigger 판정 가능.
+- (체크 2) 유가 급락 + 주식 반등 조합은 단기 risk-on 리바운드에 우호적이나, 장기금리 레벨은 여전히 부담(10Y 4.57%).
+- (체크 3) COT(05/22 공개)에서 주식/달러/금리 포지션의 “언와인드 가속” 여부를 재확인.
+

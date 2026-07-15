@@ -1,0 +1,78 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 확인 제한 / COT(2026-05-12) 기준
+
+기준일(KST): 2026-05-22
+미국장/금리 스냅샷(ET): 2026-05-21 종가(지수) / 2026-05-21 Treasury par yield(금리)
+
+① DAILY CTA Proxy Trigger
+```
+기준일         Asset / Index                     Value  D1 Δ%  D3  D5  Δ Z  Confirm
+----------  -------------------------------  --------  -----  --  --  ---  ----------
+2026-05-22  SG CTA Trend Index (proxy)            NA     NA     NA  NA  NA   확인 제한
+2026-05-22  SG Short-Term Traders Index (proxy)   NA     NA     NA  NA  NA   확인 제한
+2026-05-22  Barclay BTOP50 (proxy)                NA     NA     NA  NA  NA   확인 제한
+2026-05-22  DBMF ETF                              NA     NA     NA  NA  NA   확인 제한
+2026-05-22  KMLM ETF                              NA     NA     NA  NA  NA   확인 제한
+```
+- 메모: 현재 실행 환경에서 외부 시세 소스(DNS)가 차단되어 프록시 기반 CTA 트리거 산출이 불가합니다.
+- 대안(권장): `data/cta_proxies.csv`에 SG CTA/BTOP50 일간 값을 업데이트하면(로컬 확인) 트리거 판정이 동작합니다.
+- Trigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.
+
+② Weekly COT Signals (최신 CFTC 기준)
+```
+Date        Asset           Value(Net)   WoW Δ      %     Δ Z  Unwind?  Confirm
+----------  --------------  ----------  -------  ------  ---  -------  -------
+2026-05-12  S&P 500 (ES)      -143,835  -39,950  -38.5%   NA     ❌     확인(공식)
+2026-05-12  USD Index (DX)       3,187    2,494  +359.9%  NA     ❌     확인(공식)
+2026-05-12  UST 2Y          -1,602,612   70,717   +4.2%   NA     ❌     확인(공식)
+2026-05-12  UST 5Y          -1,362,145   59,154   +4.2%   NA     ❌     확인(공식)
+2026-05-12  UST 10Y           -781,167   34,102   +4.2%   NA     ❌     확인(공식)
+2026-05-12  UST 30Y(UST Bond) -172,854       88   +0.1%   NA     ❌     확인(공식)
+```
+- 산식: Non-Commercial Net = Long - Short (CFTC Futures Only long report).
+- 표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔)이나, 히스토리 자동 수집이 차단되어 Δ Z는 NA입니다.
+- 출처: CFTC Futures Only long report(05/12/2026) — CME(ES), CBOT(UST), ICE(DX).
+
+③ 종합 Alert
+- CTA 프록시 트리거: 확인 제한 (기준일: 2026-05-22, 시세 소스 접근 불가)
+- COT(2026-05-12 기준): 주식(ES) 비상업 순포지션은 순쇼트 유지, WoW 기준 쇼트 확대
+- 금리(2026-05-21 기준): UST 2Y/5Y 소폭 상승(+4bp/+3bp), 10Y 보합, 30Y 소폭 하락(-1bp)
+- 국면 판단: insufficient data / 확인 제한(CTA 프록시 미집계로 시스템 판정 불가)
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수 (미국장 2026-05-21 종가)
+```
+Date(ET)    Index                     Close      D1    Confirm
+----------  ----------------------  --------  ------  -----------
+2026-05-21  S&P 500                 7,445.72  +0.2%   확인(AP)
+2026-05-21  Nasdaq Composite        26,293.10 +0.1%   확인(AP)
+2026-05-21  Dow                     50,285.66 +0.6%   확인(AP)
+2026-05-21  Russell 2000             2,843.45 +0.9%   확인(AP)
+2026-05-21  Nasdaq 100              NA        NA      확인 제한
+2026-05-21  STOXX 600               NA        NA      확인 제한
+2026-05-21  Nikkei 225              NA        NA      확인 제한
+```
+
+(2) 금리 (U.S. Treasury Daily Par Yield Curve 2026-05-21)
+```
+Date(ET)    Rate     Yield   D1     Confirm
+----------  -------  ------  -----  -----------
+2026-05-21  UST 2Y   4.08%   +4bp   확인(공식)
+2026-05-21  UST 5Y   4.25%   +3bp   확인(공식)
+2026-05-21  UST 10Y  4.57%   +0bp   확인(공식)
+2026-05-21  UST 30Y  5.10%   -1bp   확인(공식)
+```
+
+(3) FX: 확인 제한(소스 미연동)
+(4) 원자재: 확인 제한(소스 미연동)
+(5) 주식 변동성(VIX/VVIX): 확인 제한(소스 미연동)
+(6) 미 증시 breadth: 확인 제한(소스 미연동)
+(7) 향후 24~48h 주요 이벤트: 확인 제한(공식 캘린더 접근 차단)
+(8) 실행 가능한 핵심 요약
+- (체크리스트) CTA 프록시: `data/cta_proxies.csv` 업데이트 → 트리거 판정 복구
+- (체크리스트) COT: 2026-05-12(화) 기준 포지션 변화는 ‘주식 순쇼트 확대’ + ‘UST 순쇼트 완화(2Y/5Y/10Y)’
+
+Sources (요약)
+- 지수(미국장): AP “How major US stock indexes fared Thursday 5/21/2026”
+- 금리: U.S. Treasury “Daily Treasury Par Yield Curve Rates” (2026-05-21)
+- COT: CFTC Futures Only long report (2026-05-12) — `deacmesf.htm`, `deacbtlf.htm`, `deanybtlf.htm`
+

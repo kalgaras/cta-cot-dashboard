@@ -1,0 +1,73 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 미발생 / 프록시(CTA ETF) 기준, 광범위 트리거 부재
+
+(기준일 KST 2026-06-01. 마켓 스냅샷은 미국 2026-05-29 종가/정산 중심. 실시간·유료지표는 확인 제한 표기)
+
+① DAILY CTA Proxy Trigger
+- Trigger 기준(예시): D1 ≤ -1.0% 또는 |Z|≥1.0 / 3D ≤ -2.0% / 5D ≤ -3.0%
+- SG CTA/BTOP50 등 비공개 지표는 오늘 자동 검증 불가 → 확인 제한
+
+[Proxy table]
+Date       Asset                          Value     D1Δ%   3DΔ%   5DΔ%   ΔZ   Confirm
+2026-05-29 DBMF (CTA ETF proxy)          31.00   -0.13  -0.54  -0.34   NA  확인(프록시)
+2026-05-29 KMLM (CTA ETF proxy)          28.46   -0.95    NA     NA    NA  확인(프록시)
+2026-05-29 SG CTA Trend Index               NA    NA     NA     NA    NA  확인 제한
+2026-05-29 SG Short-Term Traders Index      NA    NA     NA     NA    NA  확인 제한
+2026-05-29 Barclay BTOP50                   NA    NA     NA     NA    NA  확인 제한
+
+② Weekly COT Signals (CFTC, 최신) — Leveraged(펀드) Net
+- CFTC TFF(금융선물, Futures Only) 기준일: 2026-05-26 (발표: 2026-05-29)
+
+Date       Asset                           Net(Contracts)   WoWΔ     ΔZ   Confirm
+2026-05-26 S&P 500 (E-mini, ES)                 -457,780  -56,226   NA  확인(공식)
+2026-05-26 USD Index (DX)                        -12,530     -814   NA  확인(공식)
+2026-05-26 UST 2Y Note                        -1,772,557  106,075   NA  확인(공식)
+2026-05-26 UST 10Y Note                       -2,005,980  -53,243   NA  확인(공식)
+2026-05-26 UST 30Y proxy (Ultra UST Bond)       -871,013   15,050   NA  확인(공식·프록시)
+- 5Y Note는 이번 스냅샷에서 자동 추출 실패(확인 제한)
+
+③ 종합 Alert
+- CTA 시스템 상태(프록시): 미발생 (DBMF/KMLM D1 기준)
+- S&P500·Nasdaq100은 05/29 종가 기준 소폭 상승(기록 경신 지속), VIX는 15.32로 하락
+- 유가 정산: WTI 87.36, Brent 92.05로 1%대 하락(휴르무즈/휴전 기대) → 인플레 압력 완화 쪽
+- COT(Leveraged): ES/UST 10Y는 순숏이 더 확대(위험/듀레이션 익스포저 보수적), UST 2Y·UltraBond는 순숏 일부 축소
+- Regime 판단: neutral/no trigger (risk grind-up + selective exposure reduction)
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) Overnight 주요 지수 (미국 2026-05-29 종가 / 유럽·일본 2026-05-29 종가)
+Index        Level       D1Δ%   Confirm
+S&P 500       7580.06    0.22  확인
+Nasdaq 100   30333.18    0.36  확인
+Dow          51032.46    0.72  확인
+Russell 2000  2919.34   -0.60  확인
+STOXX 600          NA    0.14  확인(레벨 제한)
+Nikkei 225   66329.50    2.53  확인
+
+(2) 금리 (UST, 2026-05-29 close 스냅샷)
+Tenor  Yield  D1(bp)  Confirm
+2Y     4.00%   NA     확인(프록시: Treasury.gov 기반 집계)
+5Y     4.15%   NA     확인(프록시: Treasury.gov 기반 집계)
+10Y    4.45%   NA     확인(프록시: Treasury.gov 기반 집계)
+30Y    4.98%   NA     확인(프록시: Treasury.gov 기반 집계)
+
+(3) FX (2026-05-29, Reuters)
+- DXY 98.90 (-0.1%), EURUSD 1.1663, USDJPY 159.26
+
+(4) 원자재 (2026-05-29)
+- WTI settle 87.36 (-1.73%), Brent settle 92.05 (-1.77%)
+- Gold spot 4,545.00 (+1.18%, Reuters snapshot)
+
+(5) 주식 변동성
+- VIX 15.32 (-2.67%) / VVIX: 확인 제한
+
+(6) 미 증시 breadth 요약
+- 공식 breadth(adv/dec, new highs/lows) 숫자 자동 확인 실패 → 확인 제한
+
+(7) 향후 24~48시간 주요 이벤트
+- BLS Release Calendar 기준: 2026-06-02 10:00 ET(County Employment and Wages, Q4 2025) (중요도 낮음)
+- 추가 핵심 매크로(ISM/JOLTS 등)는 공식 캘린더 자동 추출 실패 → 확인 제한
+
+(8) 실행 가능한 핵심 요약
+- CTA 프록시(Managed Futures ETF) 기준 D1/3D/5D 급락 트리거는 부재 → 포지션 급변 신호는 약함
+- COT Leveraged: ES·UST10Y 순숏 확대 → 위험/듀레이션을 보수적으로 유지하는 흐름 점검
+- 유가 하락 + VIX 하락 조합은 단기 리스크온 지지지만, 급변 재료(중동/연준) 재부각 시 역전 가능
+

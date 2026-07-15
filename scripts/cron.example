@@ -1,0 +1,9 @@
+# Example crontab entry (runs daily at 06:40, LOCAL time of the machine)
+# - Adjust repo path and log path.
+# - Prefer absolute paths in cron.
+# - `ENV_FILE` should point to a local-only `.env`.
+#
+# 40 6 * * * cd /opt/cta-cot-cta-proxy-trigger-daily && ENV_FILE=/opt/cta-cot-cta-proxy-trigger-daily/.env ./scripts/run_daily.sh >> /var/log/cta-cot-daily.log 2>&1
+#
+# macOS example (writes logs to /tmp):
+# 40 6 * * * cd /Users/jaycom/Documents/Codex/2026-05-11/cta-cot-cta-proxy-trigger-daily && ENV_FILE=/Users/jaycom/Documents/Codex/2026-05-11/cta-cot-cta-proxy-trigger-daily/.env ./scripts/run_local_dashboard.sh >> /tmp/cta-cot-daily.log 2>&1

@@ -1,0 +1,84 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 발생 / (프록시 기준) CTA 약세 누적 신호 지속
+
+(기준일 KST) 2026-05-27
+메모:
+- 외부 DNS/소켓 제한으로 “공식/공신력 원천에서 확인 가능한 값만” 반영했습니다.
+- 미 증시 지수: 2026-05-26(화) 마감(AP).
+- Nasdaq 100 / STOXX 600 / Nikkei: 공신력 웹 원천(프록시)에서 2026-05-26 기준 확인.
+- CTA 프록시(ETF 종가)와 UST 금리(수익률 곡선)는 최신 확인 가능일이 2026-05-22로 제한됩니다.
+- COT는 (보고/포지션 기준) 2026-05-19가 최신이며, 이는 2026-05-27 기준 “가장 최근 CFTC 공개분”입니다.
+
+① DAILY CTA Proxy Trigger
+`Date       | Asset / Index                         | Value     | D1 Δ%   | D3      | D5      | Δ Z | Confirm
+2026-05-22  | SG CTA Trend Index (proxy: DBMF/KMLM/CTA)| NA      | NA      | NA      | NA      | NA  | 확인 제한(비공개/시세차단)
+2026-05-22  | SG Short-Term Traders (proxy: DBMF)    | NA        | NA      | NA      | NA      | NA  | 확인 제한(시세차단)
+2026-05-22  | Barclay BTOP50                         | NA        | NA      | NA      | NA      | NA  | 확인 제한(일간 레벨 미확인)
+2026-05-22  | DBMF ETF                               | 31.09     | -0.06%  | -0.73%  | -0.45%  | NA  | 확인(프록시: ETF 종가)
+2026-05-22  | KMLM ETF                               | 29.22     | +0.09%  | -2.40%  | -2.08%  | NA  | 확인(프록시: ETF 종가)
+2026-05-22  | Simplify CTA ETF (proxy)               | 30.70     | -0.78%  | -5.07%  | -4.12%  | NA  | 확인(프록시: ETF 종가)`
+
+- Trigger 판정(프록시): CTA ETF가 3D≤-2% 및 5D≤-3% 조건 충족 → “발생”
+- 주의: DBMF/KMLM은 동기간 낙폭이 제한적 → “광범위한 CTA unwind”로 단정 금지(모니터링)
+
+② Weekly COT Signals (최신 CFTC 기준: 2026-05-19, Leveraged Funds 프록시)
+`Date       | Asset           | Value(Net) | WoW Δ    | %      | Δ Z | Unwind? | Confirm
+2026-05-19  | S&P 500 (ES)    | -401,554   | +30,884  | +7.1%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | USD Index (DX)  | -11,716    | -6,965   | -146.6%| NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 2Y          | -1,878,632 | +69,197  | +3.6%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 5Y          | -2,306,447 | +42,758  | +1.8%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 10Y         | -1,952,737 | +4,205   | +0.2%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 30Y(USTBond)| -326,383   | -30,187  | -10.2% | NA  | ❌      | 확인(CFTC TFF, Lev Funds)`
+
+- 표기: Net/WoW Δ/%는 “Leveraged Funds (Long-Short)” 기준 프록시(자금군/보고서별 Net 정의 상이)
+
+③ 종합 Alert
+- CTA 시스템(프록시): “slow deleveraging / exposure reduction” 쪽으로 기울어짐(CTA ETF 하락 누적)
+- Context
+  - CTA ETF 3~5일 누적 하락이 -2%/-3% 기준을 초과(프록시 트리거)
+  - CFTC(05/19 기준)에서는 Lev Funds의 ES net short가 축소(+30.9k) → “주가지수 선물의 숏 익스포저 축소” 신호
+  - UST(2Y/5Y/10Y)에서는 net short 축소, UST Bond에서는 net short 확대 → 듀레이션/커브 포지션은 혼재(모니터링)
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수 (2026-05-26 기준)
+`As of      | Index         | Level      | Chg
+2026-05-26  | S&P 500       | 7,519.12   | +0.6%
+2026-05-26  | Nasdaq 100    | 30,001.32  | +1.76% (proxy)
+2026-05-26  | Dow           | 50,461.68  | -0.2%
+2026-05-26  | Russell 2000  | 2,920.54   | +1.8%
+2026-05-26  | STOXX 600     | 628.01     | -0.57% (proxy)
+2026-05-26  | Nikkei 225    | 64,996.09  | -0.25%`
+
+(2) 금리: U.S. Treasury (Daily Par Yield Curve Rates, 2026-05-22; 최신 확인 가능일 제한)
+`Date       | 2Y   | 5Y   | 10Y  | 30Y
+2026-05-22  | 4.13 | 4.27 | 4.56 | 5.07`
+
+(3) FX (Reuters, 2026-05-26 기준 스냅샷)
+- DXY: 99.031
+- EURUSD: 1.1636
+- USDJPY: 158.99
+
+(4) 원자재
+- WTI / Brent: 확인 제한(공신력 원천에서 05/26 종가 숫자 자동 추출 실패; “$100 아래” 구간은 Reuters 코멘트로만 확인)
+- Gold(Spot): $4,511.23/oz (Reuters, 05/26)
+
+(5) 주식 변동성
+- VIX / VVIX: 확인 제한(공식 종가 자동 추출 실패)
+
+(6) 미 증시 breadth: 확인 제한(소스 미연동)
+
+(7) 향후 24~48시간 주요 이벤트(ET)
+- 05/28(목): Personal Income and Outlays / PCE(예정, BEA 일정 기준)
+
+(8) 실행 가능한 핵심 요약(모니터링 관점)
+- (CTA) “CTA ETF 약세 누적”이 DBMF/KMLM로 확산되는지 3~5일 창으로 재확인(프록시)
+- (매크로) 금리 레벨이 높은 구간(10Y 4%대 중반)에서 “주가 고점권” → 변동성 재확대 신호(VIX) 확인이 필요(현재는 확인 제한)
+
+데이터 소스(공신력 우선, 일부 프록시):
+- 미 증시 주요 지수(05/26): AP “How major US stock indexes fared Tuesday 5/26/2026”
+- Nasdaq 100 / STOXX 600: MarketScreener (05/26, proxy)
+- Nikkei 225(05/26): StockQ
+- 금리(05/22): U.S. Treasury “Daily Treasury Par Yield Curve Rates”
+- COT(05/19): CFTC “Traders in Financial Futures – Futures Only”
+- ETF 종가(DBMF/KMLM/CTA, 05/22): StockAnalysis ETF historical data (프록시)
+- FX/Gold 일부(05/26): Reuters(Investing/MarketScreener 재배포)
+

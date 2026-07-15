@@ -1,0 +1,86 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 발생 / slow deleveraging / exposure reduction
+
+(기준일 KST) 2026-05-26
+메모: 2026-05-25(월)은 Memorial Day로 미 주식/채권 시장 휴장 → 아래 “마켓” 수치는 주로 2026-05-22(금) 종가/마감치 기준.
+
+① DAILY CTA Proxy Trigger
+`Date      | Asset / Index                         | Value     | D1 Δ%   | Δ Z | Confirm
+2026-05-22 | SG CTA Trend Index                    | NA        | NA      | NA  | 확인 제한(비공개 지수)
+2026-05-22 | SG Short-Term Traders Index           | NA        | NA      | NA  | 확인 제한(비공개 지수)
+2026-05-25 | Barclay BTOP50 (Monthly return, est.) | May +0.92%| NA      | NA  | 확인(BarclayHedge, est.)
+2026-05-22 | DBMF ETF                              | 31.09     | -0.06%  | NA  | 확인(프록시: ETF 종가)
+2026-05-22 | KMLM ETF                              | 29.22     | +0.09%  | NA  | 확인(프록시: ETF 종가)
+2026-05-22 | CTA ETF                               | 30.70     | -0.78%  | NA  | 확인(프록시: ETF 종가)`
+
+- 3~5일 누적(프록시, 종가 기준):
+  - DBMF: 3D -0.73% / 5D -0.45% (05/19·05/15 대비)
+  - KMLM: 3D -2.40% / 5D -2.08% (05/19·05/15 대비)
+  - CTA : 3D -5.07% / 5D -4.12% (05/19·05/15 대비) → 3D/5D 기준 Trigger 충족
+- Trigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.
+
+② Weekly COT Signals (최신 CFTC 기준)
+`Date       | Asset           | Value(Net) | WoW Δ    | %      | Δ Z | Unwind? | Confirm
+2026-05-19  | S&P 500 (ES)    | -401,554   | +30,884  | +7.1%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | USD Index (DX)  | -11,716    | -6,965   | -146.6%| NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 2Y          | -1,878,632 | +69,197  | +3.6%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 5Y          | -2,306,447 | +42,758  | +1.8%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 10Y         | -1,952,737 | +4,205   | +0.2%  | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 30Y(USTBond)| -326,383   | -30,187  | -10.2% | NA  | ❌      | 확인(CFTC TFF, Lev Funds)`
+
+- 표기: Net/WoW Δ/%는 “Leveraged Funds” (Long-Short) 기준 프록시. (비상업/자금군 전체 Net과 다를 수 있음)
+
+③ 종합 Alert
+- CTA 프록시 트리거: 발생 (기준일: 2026-05-26 KST / 프록시 데이터는 05-22 마감치 중심)
+- 국면 판단: slow deleveraging / exposure reduction
+- Context
+  - managed-futures ETF(CTA)에서 3~5일 누적 하락이 -2%/-3% 기준을 넘어섬(프록시 트리거)
+  - 단, DBMF/KMLM은 동기간 낙폭이 상대적으로 제한적 → “광범위한 CTA unwind”로 단정은 금지(모니터링)
+  - 최신 CFTC(TFF, 05/19 기준)에서 Lev Funds는 ES net short 축소(+30.9k), UST(2Y/5Y/10Y)는 net short 축소, UST Bond는 net short 확대
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수 (최근 확인 가능 종가)
+`As of      | Index         | Level     | Chg
+2026-05-22  | S&P 500       | 7,473.47  | +0.4%
+2026-05-22  | Nasdaq 100    | 29,519.09 | +0.55%
+2026-05-22  | Dow           | 50,579.70 | +0.6%
+2026-05-22  | Russell 2000  | 2,869.23  | +0.9%
+2026-05-22  | STOXX 600     | 625.12    | +0.73%
+2026-05-22  | Nikkei 225    | 65,366.00 | +3.20%`
+
+(2) 금리: U.S. Treasury (Daily Par Yield Curve Rates, 2026-05-22)
+`Date       | 2Y   | 5Y   | 10Y  | 30Y
+2026-05-22  | 4.13 | 4.27 | 4.56 | 5.07`
+
+(3) FX (프록시/요약)
+- DXY(선물): 99.25 (2026-05-22 기준 기사 내 표기)
+- USDJPY: 159.12 (2026-05-22 기준 기사 내 표기)
+- EURUSD: 확인 제한
+
+(4) 원자재 (프록시/요약; 선물)
+- WTI Jul: $97.98
+- Brent Jul: $104.84
+- Gold Jun: $4,526.30/oz
+
+(5) 주식 변동성
+- VIX / VVIX: 확인 제한
+
+(6) 미 증시 breadth
+- 확인 제한(소스 미연동)
+
+(7) 향후 24~48시간 주요 이벤트 (ET 기준, 일부)
+- 05/25(월): Memorial Day 휴장(미 주식/채권)
+- 05/26(화): S&P CoreLogic Case‑Shiller(09:00) / Consumer Confidence(10:00)
+- 05/27(수): Fed 발언 일정 일부(연설) — 상세 확인 제한
+
+(8) 실행 가능한 핵심 요약(모니터링 관점)
+- CTA(프록시)에서 3~5일 누적 하락 신호가 1개(CTA ETF)에서 확인 → “추가 약세가 확산되는지”를 3~5일 창으로 재확인
+- 금리(05/22): 10Y 4.56% / 30Y 5.07%로 장기금리 레벨이 높은 구간 → 주식 조정 시 ‘금리 민감’ 섹터 변동성 확대 가능성 점검
+
+데이터 소스(공신력 우선, 일부 프록시):
+- 미 증시 주요 지수(05/22): AP “How major US stock indexes fared Friday 5/22/2026”
+- 금리(05/22): U.S. Treasury “Daily Treasury Par Yield Curve Rates”
+- COT(05/19): CFTC “Traders in Financial Futures – Futures Only”
+- BTOP50(5월 추정): BarclayHedge BTOP50 Index (estimated)
+- ETF 종가(DBMF/KMLM/CTA): StockAnalysis ETF historical data (프록시)
+- 일본/FX/원자재 일부: Investing.com(Reuters) 기사 내 수치(프록시)
+

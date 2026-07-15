@@ -1,0 +1,89 @@
+CTA 포지셔닝 모니터 — Proxy Trigger 확인 제한 / (주가) 신고가 vs (유가·금리) 완화
+
+(기준일 KST) 2026-05-29
+메모:
+- 본 리포트의 “overnight”는 미국 2026-05-28(목) 마감/스냅샷 기준입니다.
+- CTA/BTOP50/SG CTA 등 비공개 지표는 최신 확인 제한 시 “프록시/확인 제한”으로 표기합니다.
+- COT는 (포지션 기준) 2026-05-19가 현재 시점 최신 CFTC 공개분이며, 다음 공개는 2026-05-29 15:30 ET(= 2026-05-30 04:30 KST) 예정입니다.
+
+① DAILY CTA Proxy Trigger
+`Date       | Asset / Index                           | Value     | D1 Δ%   | D3      | D5      | Δ Z | Confirm
+2026-05-29  | SG CTA Trend Index (proxy: DBMF/KMLM/CTA) | NA       | NA      | NA      | NA      | NA  | 확인 제한(비공개/최신 시세 미확인)
+2026-05-29  | SG Short-Term Traders (proxy: DBMF)       | NA       | NA      | NA      | NA      | NA  | 확인 제한(비공개/최신 시세 미확인)
+2026-05-29  | Barclay BTOP50                            | NA       | NA      | NA      | NA      | NA  | 확인 제한(일간 레벨 미확인)
+2026-05-29  | DBMF ETF (proxy)                          | NA       | NA      | NA      | NA      | NA  | 확인 제한(최신 시세 미확인)
+2026-05-29  | KMLM ETF (proxy)                          | NA       | NA      | NA      | NA      | NA  | 확인 제한(최신 시세 미확인)
+2026-05-29  | Simplify CTA ETF (proxy)                  | NA       | NA      | NA      | NA      | NA  | 확인 제한(최신 시세 미확인)`
+
+- Trigger 판정: 유효 데이터 부족 → 판정 불가(확인 제한)
+- 체크포인트: (1) CTA ETF 최신 종가 확보 (2) 3~5일 누적 변화로 재판정
+
+② Weekly COT Signals (최신 CFTC 기준: 2026-05-19, Leveraged Funds 프록시)
+`Date       | Asset                | Value(Net) | WoW Δ     | %       | Δ Z | Unwind? | Confirm
+2026-05-19  | S&P 500 (ES)         | -401,554   | +30,884   | +7.1%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | USD Index (DX)       | -11,716    | -6,965    | -146.6% | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 2Y               | -1,878,632 | +69,197   | +3.6%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 5Y               | -2,306,447 | +42,758   | +1.8%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 10Y              | -1,952,737 | +4,205    | +0.2%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)
+2026-05-19  | UST 30Y(프록시: UB)  | -886,063   | -12,834   | -1.4%   | NA  | ❌      | 확인(CFTC TFF, Lev Funds)`
+
+- 표기: Net/WoW Δ/%는 “Leveraged Funds (Long-Short)” 기준(자금군 정의 차이 주의)
+
+③ 종합 Alert
+- CTA 시스템(프록시): neutral/no trigger (판정 보류) — 핵심 입력(CTA 프록시 최신) 확인 제한
+- Context
+  - (주가) S&P500/Nasdaq/Dow 모두 2026-05-28 종가 기준 신고가 흐름 지속
+  - (금리) 미 국채 금리 곡선은 2026-05-28 기준 전반 하락(특히 10Y/30Y)
+  - (FX/원자재) 달러 약세(DXY↓) + 유가 변동성 지속, 금은 반등
+
+④ 간결한 일일 마켓 모니터(CTA 제외)
+(1) overnight 주요 지수 (미국 2026-05-28 마감)
+`As of      | Index        | Level      | Chg
+2026-05-28  | S&P 500      | 7,563.63   | +0.6%
+2026-05-28  | Nasdaq 100   | 29,973.57  | 확인 제한(최신 1영업일 지연; 2026-05-27 종가)
+2026-05-28  | Dow          | 50,668.97  | ~+0.1%
+2026-05-28  | Russell 2000 | 2,936.57   | +0.6%
+2026-05-28  | STOXX 600    | 625.11     | -0.5%
+2026-05-28  | Nikkei 225   | 64,693.12  | -0.47%`
+
+(2) 금리: U.S. Treasury (2026-05-28, Daily Treasury Par Yield Curve Rates)
+`Date       | 2Y    | 5Y    | 10Y   | 30Y
+2026-05-28  | 3.99  | 4.15  | 4.45  | 4.98`
+
+(3) FX (2026-05-28 스냅샷)
+- DXY: 99.02
+- EURUSD: 1.1652
+- USDJPY: 159.27
+
+(4) 원자재 (2026-05-28, Reuters)
+- WTI(근월): 88.90 (settle)
+- Brent(7월): 93.71 (settle)
+- Gold: 4,504.07/oz (NY 13:31 ET 스냅샷)
+
+(5) 주식 변동성 (2026-05-28)
+- VIX: 15.74 (close 스냅샷)
+- VVIX: 89.55 (프록시; Barchart last price)
+
+(6) 미 증시 breadth 요약
+- 2026-05-28 수치: 확인 제한(공식/공신력 원천에서 숫자 스냅샷 확보 실패)
+
+(7) 향후 24~48시간 주요 이벤트
+- CFTC COT 공개: 2026-05-29 15:30 ET (KST 2026-05-30 04:30)
+- 그 외 매크로/실적/연준 발언: 확인 제한(캘린더 원천 자동 조회 실패)
+
+(8) 실행 가능한 핵심 요약(모니터링 관점)
+- (CTA) CTA 프록시(CTA/DBMF/KMLM) 최신 종가 확보 → 3~5일 누적 트리거 재판정
+- (크로스) “주가 신고가 + VIX 하락” 조합이 유지되는지(=리스크 프리미엄 추가 압축 가능) vs 이벤트(중동/유가) 재확대 시 변동성 재상승 위험
+- (금리) 10Y/30Y 하락이 이어질 경우(성장/인플레 기대 재조정) 리스크자산의 ‘상승 지속 vs 회전’ 신호를 분리 관찰
+
+데이터 소스(공신력 우선, 일부 프록시):
+- 미 증시 주요 지수(05/28): AP “How major US stock indexes fared Thursday 5/28/2026”
+- STOXX 600(05/28): Reuters(재배포, MarketScreener)
+- Nikkei 225(05/28): Nikkei Indexes (official archives)
+- 금리(05/28): U.S. Department of the Treasury (Daily Treasury Par Yield Curve Rates)
+- FX/금: Reuters(재배포, MarketScreener)
+- 유가: Reuters(재배포, MarketScreener)
+- VIX: ChartExchange (프록시)
+- VVIX: Barchart (프록시)
+- COT 공개 일정: CFTC Release Schedule
+
