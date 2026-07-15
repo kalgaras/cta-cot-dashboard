@@ -55,7 +55,7 @@ python3 scripts/build_dashboard_data.py
 
 ## GitHub Pages 배포
 
-대시보드는 `dashboard/` 폴더만 배포하는 정적 사이트입니다. `.env`, `.venv`, `data/.cache`는 `.gitignore`로 제외됩니다.
+대시보드는 `dashboard/`를 원본으로 쓰고, GitHub Pages에는 `docs/` 폴더를 배포합니다. `.env`, `.venv`, `data/.cache`는 `.gitignore`로 제외됩니다.
 
 1) 로컬에서 최신 데이터 생성:
 
@@ -63,20 +63,33 @@ python3 scripts/build_dashboard_data.py
 ./scripts/run_local_dashboard.sh
 ```
 
-2) GitHub 저장소를 만들고 `main` 브랜치에 push:
+2) `dashboard/` 내용을 `docs/`에 반영:
+
+```bash
+mkdir -p docs/data
+cp dashboard/index.html dashboard/styles.css dashboard/app.js dashboard/config.js dashboard/static.html docs/
+cp dashboard/data/data.js dashboard/data/network_status.json docs/data/
+cp dashboard/.nojekyll docs/.nojekyll
+```
+
+3) GitHub 저장소에 push:
 
 ```bash
 git init
-git add .github .gitignore dashboard README.md data/last_report_latest.txt data/last_report_*.txt scripts src main.py requirements.txt
+git add .gitignore dashboard docs README.md data/last_report_latest.txt data/last_report_*.txt scripts src main.py requirements.txt
 git commit -m "Deploy CTA COT dashboard"
 git branch -M main
 git remote add origin https://github.com/YOUR_USER/YOUR_REPO.git
 git push -u origin main
 ```
 
-3) GitHub 저장소의 **Settings → Pages**에서 Source가 **GitHub Actions**인지 확인합니다.
+4) GitHub 저장소의 **Settings → Pages**에서 아래처럼 설정합니다.
 
-배포가 끝나면 Actions의 `Deploy dashboard to GitHub Pages` 실행 결과에 사이트 주소가 표시됩니다.
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/docs`
+
+배포가 끝나면 사이트 주소는 보통 `https://YOUR_USER.github.io/YOUR_REPO/` 형태입니다.
 
 ## 크론(서버) 실행 권장 방식
 
