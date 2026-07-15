@@ -91,6 +91,20 @@ git push -u origin main
 
 배포가 끝나면 사이트 주소는 보통 `https://YOUR_USER.github.io/YOUR_REPO/` 형태입니다.
 
+### 매일 자동 업데이트 + 배포
+
+아래 스크립트는 리포트를 새로 만들고, `dashboard/` 결과를 `docs/`에 반영한 뒤, 변경사항이 있으면 GitHub에 push합니다.
+
+```bash
+./scripts/publish_github_pages.sh
+```
+
+로컬 macOS에서 매일 오전 8시에 자동 갱신하려면 `crontab -e`에 아래를 추가합니다.
+
+```cron
+0 8 * * * cd /Users/jaycom/Documents/Codex/2026-05-11/cta-cot-cta-proxy-trigger-daily && ./scripts/publish_github_pages.sh >> /tmp/cta-cot-pages-publish.log 2>&1
+```
+
 ## 크론(서버) 실행 권장 방식
 
 크론은 로그인 셸이 아니므로, **절대경로 + venv 고정**이 안전합니다.
