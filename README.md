@@ -102,7 +102,7 @@ git push -u origin main
 로컬 macOS에서 매일 오전 6시 50분에 자동 갱신하려면 `crontab -e`에 아래를 추가합니다.
 
 ```cron
-50 6 * * * cd /Users/jaycom/Documents/Codex/2026-05-11/cta-cot-cta-proxy-trigger-daily && ./scripts/publish_github_pages.sh >> /tmp/cta-cot-pages-publish.log 2>&1
+50 6 * * * cd /Users/jaycom/Documents/Codex/2026-05-11/cta-cot-cta-proxy-trigger-daily && /bin/bash ./scripts/publish_github_pages.sh >> /tmp/cta-cot-pages-publish.log 2>&1
 ```
 
 ## 크론(서버) 실행 권장 방식
