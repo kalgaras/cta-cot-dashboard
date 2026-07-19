@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-15T16:59:22+09:00",
+  "checkedAt": "2026-07-20T08:29:36+09:00",
   "reachable": 4,
   "total": 5,
   "alphaVantageKeyConfigured": true,
@@ -23,7 +23,7 @@
       "host": "www.cftc.gov",
       "dns_ok": true,
       "http_ok": true,
-      "detail": "HTTP 200 text/html; charset=UTF-8"
+      "detail": "HTTP 200 text/html; charset=utf-8"
     },
     {
       "name": "Stooq",
