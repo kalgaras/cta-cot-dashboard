@@ -86,14 +86,14 @@ git push -u origin main
 4) GitHub 저장소의 **Settings → Pages**에서 아래처럼 설정합니다.
 
 - Source: `Deploy from a branch`
-- Branch: `main`
-- Folder: `/docs`
+- Branch: `gh-pages`
+- Folder: `/(root)`
 
 배포가 끝나면 사이트 주소는 보통 `https://YOUR_USER.github.io/YOUR_REPO/` 형태입니다.
 
 ### 매일 자동 업데이트 + 배포
 
-아래 스크립트는 리포트를 새로 만들고, `dashboard/` 결과를 `docs/`에 반영한 뒤, 변경사항이 있으면 GitHub에 push합니다.
+아래 스크립트는 리포트를 새로 만들고, `dashboard/` 결과를 `docs/`에 반영한 뒤, `main`과 GitHub Pages용 `gh-pages` 브랜치에 함께 push합니다.
 
 ```bash
 ./scripts/publish_github_pages.sh

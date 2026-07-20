@@ -41,4 +41,22 @@ git commit -m "Update dashboard data ${STAMP}"
 echo "[GIT] push"
 git push
 
+echo "[GIT] publish docs to gh-pages branch"
+PUBLISH_DIR="$(mktemp -d "${TMPDIR:-/tmp}/cta-cot-gh-pages.XXXXXX")"
+cleanup() {
+  git worktree remove "$PUBLISH_DIR" --force >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+
+git worktree add --detach "$PUBLISH_DIR" HEAD >/dev/null
+(
+  cd "$PUBLISH_DIR"
+  git checkout --orphan "gh-pages-publish-${STAMP//-/}" >/dev/null 2>&1
+  git rm -rf . >/dev/null 2>&1 || true
+  cp -R "$ROOT_DIR/docs/." .
+  git add .
+  git commit -m "Publish dashboard ${STAMP}" >/dev/null
+  git push -f origin HEAD:gh-pages
+)
+
 echo "[DONE] GitHub Pages will update shortly"
