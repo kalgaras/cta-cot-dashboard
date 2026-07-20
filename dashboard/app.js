@@ -1,7 +1,24 @@
 (function () {
   "use strict";
 
-  const DATA = window.CTA_DASHBOARD_DATA || { reports: [], latest: null };
+  const dataVersion = new Date().toISOString().slice(0, 13).replace(/\D/g, "");
+
+  function loadDashboardData() {
+    return new Promise((resolve) => {
+      if (window.CTA_DASHBOARD_DATA) {
+        resolve(window.CTA_DASHBOARD_DATA);
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = `./data/data.js?v=${dataVersion}`;
+      script.onload = () => resolve(window.CTA_DASHBOARD_DATA || { reports: [], latest: null });
+      script.onerror = () => resolve({ reports: [], latest: null });
+      document.head.appendChild(script);
+    });
+  }
+
+  loadDashboardData().then((DATA) => {
   const $ = (id) => document.getElementById(id);
   const reports = DATA.reports || [];
   const uniqueReports = reports.filter((report) => report.name !== "last_report_latest.txt");
@@ -236,4 +253,5 @@
   });
 
   render();
+  });
 })();
