@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-07-22T09:43:11+09:00",
-  "reachable": 4,
+  "checkedAt": "2026-07-22T10:00:17+09:00",
+  "reachable": 5,
   "total": 5,
   "alphaVantageKeyConfigured": true,
   "results": [
@@ -13,10 +13,10 @@
     },
     {
       "name": "FRED",
-      "host": "fred.stlouisfed.org",
+      "host": "api.stlouisfed.org",
       "dns_ok": true,
-      "http_ok": false,
-      "detail": "ReadTimeout: "
+      "http_ok": true,
+      "detail": "HTTP 200 application/json; charset=UTF-8"
     },
     {
       "name": "CFTC",
