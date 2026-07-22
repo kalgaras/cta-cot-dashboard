@@ -34,6 +34,12 @@ def _parse_date(s: str) -> Optional[date]:
 
 
 async def fetch_fred_series(series_id: str, timeout_s: float, limit: int = 30, api_key: Optional[str] = None) -> FredSeriesResult:
+    api_key_s = (api_key or "").strip()
+    if api_key_s:
+        api_result = await _fetch_fred_api_series(series_id, timeout_s=timeout_s, limit=limit, api_key=api_key_s)
+        if api_result.ok:
+            return api_result
+
     # Use the public fredgraph CSV endpoint (no API key required):
     # https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}
     url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
@@ -47,59 +53,8 @@ async def fetch_fred_series(series_id: str, timeout_s: float, limit: int = 30, a
         if (res.content_type or "").lower().startswith("cached") and not cache_note:
             cache_note = " [cache]"
     if not res.ok or not res.text:
-        # Fallback to FRED API if an API key is provided.
-        api_key_s = (api_key or "").strip()
         if api_key_s:
-            api_url = (
-                "https://api.stlouisfed.org/fred/series/observations"
-                f"?series_id={series_id}&api_key={api_key_s}&file_type=json&sort_order=desc&limit={limit}"
-            )
-            api_res = await fetch_text(api_url, timeout_s=timeout_s)
-            if not api_res.ok or not api_res.text:
-                return FredSeriesResult(
-                    ok=False,
-                    series_id=series_id,
-                    used_url=api_res.url,
-                    points=[],
-                    error=api_res.error or "fetch failed",
-                    source_label="FRED API (needs key)",
-                )
-            try:
-                import json
-
-                payload = json.loads(api_res.text)
-                obs = payload.get("observations", [])
-                pts: list[FredPoint] = []
-                for o in obs:
-                    d = _parse_date(str(o.get("date", "")))
-                    v = str(o.get("value", "")).strip()
-                    if not d or v in (".", ""):
-                        continue
-                    try:
-                        fv = float(v)
-                    except ValueError:
-                        continue
-                    pts.append(FredPoint(d=d, value=fv))
-                pts.sort(key=lambda x: x.d)
-                if len(pts) < 2:
-                    return FredSeriesResult(
-                        ok=False,
-                        series_id=series_id,
-                        used_url=api_res.url,
-                        points=[],
-                        error="insufficient points",
-                        source_label="FRED API (needs key)",
-                    )
-                return FredSeriesResult(ok=True, series_id=series_id, used_url=api_res.url, points=pts, error=None, source_label="FRED API (needs key)")
-            except Exception as exc:  # noqa: BLE001
-                return FredSeriesResult(
-                    ok=False,
-                    series_id=series_id,
-                    used_url=api_res.url,
-                    points=[],
-                    error=f"parse error: {exc}",
-                    source_label="FRED API (needs key)",
-                )
+            return await _fetch_fred_api_series(series_id, timeout_s=timeout_s, limit=limit, api_key=api_key_s)
 
         return FredSeriesResult(
             ok=False,
@@ -167,4 +122,57 @@ async def fetch_fred_series(series_id: str, timeout_s: float, limit: int = 30, a
             points=[],
             error=f"parse error: {exc}",
             source_label="FRED fredgraph.csv (public)" + cache_note,
+        )
+
+
+async def _fetch_fred_api_series(series_id: str, timeout_s: float, limit: int, api_key: str) -> FredSeriesResult:
+    api_url = (
+        "https://api.stlouisfed.org/fred/series/observations"
+        f"?series_id={series_id}&api_key={api_key}&file_type=json&sort_order=desc&limit={limit}"
+    )
+    api_res = await fetch_text(api_url, timeout_s=timeout_s)
+    if not api_res.ok or not api_res.text:
+        return FredSeriesResult(
+            ok=False,
+            series_id=series_id,
+            used_url=api_res.url,
+            points=[],
+            error=api_res.error or "fetch failed",
+            source_label="FRED API",
+        )
+    try:
+        import json
+
+        payload = json.loads(api_res.text)
+        obs = payload.get("observations", [])
+        pts: list[FredPoint] = []
+        for o in obs:
+            d = _parse_date(str(o.get("date", "")))
+            v = str(o.get("value", "")).strip()
+            if not d or v in (".", ""):
+                continue
+            try:
+                fv = float(v)
+            except ValueError:
+                continue
+            pts.append(FredPoint(d=d, value=fv))
+        pts.sort(key=lambda x: x.d)
+        if len(pts) < 2:
+            return FredSeriesResult(
+                ok=False,
+                series_id=series_id,
+                used_url=api_res.url,
+                points=[],
+                error="insufficient points",
+                source_label="FRED API",
+            )
+        return FredSeriesResult(ok=True, series_id=series_id, used_url=api_res.url, points=pts, error=None, source_label="FRED API")
+    except Exception as exc:  # noqa: BLE001
+        return FredSeriesResult(
+            ok=False,
+            series_id=series_id,
+            used_url=api_res.url,
+            points=[],
+            error=f"parse error: {exc}",
+            source_label="FRED API",
         )

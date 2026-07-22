@@ -30,16 +30,21 @@ def _load_env_file() -> None:
         os.environ.setdefault(key, value)
 
 
-def _checks() -> list[tuple[str, str]]:
+def _checks() -> list[tuple[str, str, float]]:
     alpha_key = (os.getenv("ALPHA_VANTAGE_API_KEY") or "demo").strip() or "demo"
     if alpha_key in {"YOUR_KEY_HERE", "..."}:
         alpha_key = "demo"
+    fred_key = (os.getenv("FRED_API_KEY") or "").strip()
+    fred_url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10"
+    if fred_key:
+        fred_url = f"https://api.stlouisfed.org/fred/series/observations?series_id=DGS10&api_key={fred_key}&file_type=json&sort_order=desc&limit=2"
+    fred_timeout = float((os.getenv("FRED_CHECK_TIMEOUT_S") or "20").strip() or "20")
     return [
-        ("Yahoo Finance", "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=1d"),
-        ("FRED", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10"),
-        ("CFTC", "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm"),
-        ("Stooq", "https://stooq.com/q/d/l/?s=spy.us&i=d"),
-        ("Alpha Vantage", f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=SPY&apikey={alpha_key}"),
+        ("Yahoo Finance", "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=5d&interval=1d", 10.0),
+        ("FRED", fred_url, fred_timeout),
+        ("CFTC", "https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm", 10.0),
+        ("Stooq", "https://stooq.com/q/d/l/?s=spy.us&i=d", 10.0),
+        ("Alpha Vantage", f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=SPY&apikey={alpha_key}", 10.0),
     ]
 
 
@@ -61,14 +66,14 @@ async def _dns_ok(host: str) -> tuple[bool, str]:
         return False, f"{type(exc).__name__}: {exc}"
 
 
-async def _check(name: str, url: str) -> CheckResult:
+async def _check(name: str, url: str, timeout_s: float) -> CheckResult:
     host = urlparse(url).hostname or url
     dns_ok, dns_detail = await _dns_ok(host)
     if not dns_ok:
         return CheckResult(name=name, host=host, dns_ok=False, http_ok=False, detail=dns_detail)
 
     try:
-        async with httpx.AsyncClient(timeout=10, follow_redirects=True) as client:
+        async with httpx.AsyncClient(timeout=timeout_s, follow_redirects=True) as client:
             response = await client.get(url, headers={"User-Agent": "Mozilla/5.0"})
         content_type = response.headers.get("content-type", "unknown")
         ok = response.status_code < 400
@@ -86,7 +91,7 @@ async def _check(name: str, url: str) -> CheckResult:
 async def _amain() -> int:
     _load_env_file()
     checks = _checks()
-    results = await asyncio.gather(*[_check(name, url) for name, url in checks])
+    results = await asyncio.gather(*[_check(name, url, timeout_s) for name, url, timeout_s in checks])
     print("CTA/COT data-source network check")
     print("---------------------------------")
     ok_count = 0
