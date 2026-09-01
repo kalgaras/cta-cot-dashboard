@@ -1,43 +1,43 @@
 {
-  "checkedAt": "2026-08-31T06:50:02+09:00",
-  "reachable": 5,
+  "checkedAt": "2026-09-02T06:50:31+09:00",
+  "reachable": 0,
   "total": 5,
   "alphaVantageKeyConfigured": true,
   "results": [
     {
       "name": "Yahoo Finance",
       "host": "query1.finance.yahoo.com",
-      "dns_ok": true,
-      "http_ok": true,
-      "detail": "HTTP 200 application/json;charset=utf-8"
+      "dns_ok": false,
+      "http_ok": false,
+      "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
     },
     {
       "name": "FRED",
       "host": "api.stlouisfed.org",
-      "dns_ok": true,
-      "http_ok": true,
-      "detail": "HTTP 200 application/json; charset=UTF-8"
+      "dns_ok": false,
+      "http_ok": false,
+      "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
     },
     {
       "name": "CFTC",
       "host": "www.cftc.gov",
       "dns_ok": true,
-      "http_ok": true,
-      "detail": "HTTP 200 text/html; charset=utf-8"
+      "http_ok": false,
+      "detail": "ConnectError: All connection attempts failed"
     },
     {
       "name": "Stooq",
       "host": "stooq.com",
-      "dns_ok": true,
-      "http_ok": true,
-      "detail": "HTTP 200 text/html; charset=utf-8"
+      "dns_ok": false,
+      "http_ok": false,
+      "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
     },
     {
       "name": "Alpha Vantage",
       "host": "www.alphavantage.co",
-      "dns_ok": true,
-      "http_ok": true,
-      "detail": "HTTP 200 application/json"
+      "dns_ok": false,
+      "http_ok": false,
+      "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
     }
   ]
 }

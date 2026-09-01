@@ -1,16 +1,16 @@
 window.CTA_DASHBOARD_DATA = {
-  "generatedAt": "2026-08-31T06:53:52+09:00",
+  "generatedAt": "2026-09-02T06:57:33+09:00",
   "latest": {
     "name": "last_report_latest.txt",
     "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
-    "date": "2026-08-31",
+    "date": "2026-09-02",
     "trigger": "재차 발생",
     "regime": "slow deleveraging / exposure reduction",
-    "mtime": "2026-08-31T06:53:51+09:00",
+    "mtime": "2026-09-02T06:57:33+09:00",
     "size": 4700,
-    "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인     \n2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인     \n2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인     \n2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시    \n2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시    \n2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-27  UST 2Y   4.20%  +1.0bp  확인     \n2026-08-27  UST 5Y   4.38%  +1.0bp  확인     \n2026-08-27  UST 10Y  4.67%  +1.0bp  확인     \n2026-08-27  UST 30Y  5.19%  +1.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인     \n2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인     \n2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-27  VIX  14.51  -4.60%  -8.45%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+    "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
     "summary": {
-      "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)",
+      "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
       "regime": "- 국면 판단: slow deleveraging / exposure reduction",
       "network": "정상/미표기",
       "confirmLimited": 4,
@@ -28,11 +28,11 @@ window.CTA_DASHBOARD_DATA = {
           "available": 5,
           "total": 5,
           "rows": [
-            "2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시",
-            "2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시",
-            "2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시",
-            "2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시",
-            "2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시"
+            "2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+            "2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시",
+            "2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+            "2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시",
+            "2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시"
           ]
         },
         {
@@ -56,12 +56,12 @@ window.CTA_DASHBOARD_DATA = {
           "available": 6,
           "total": 6,
           "rows": [
-            "2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인",
-            "2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인",
-            "2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인",
-            "2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시",
-            "2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시",
-            "2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인"
+            "2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인",
+            "2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인",
+            "2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인",
+            "2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시",
+            "2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시",
+            "2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인"
           ]
         },
         {
@@ -71,10 +71,10 @@ window.CTA_DASHBOARD_DATA = {
           "available": 4,
           "total": 4,
           "rows": [
-            "2026-08-27  UST 2Y   4.20%  +1.0bp  확인",
-            "2026-08-27  UST 5Y   4.38%  +1.0bp  확인",
-            "2026-08-27  UST 10Y  4.67%  +1.0bp  확인",
-            "2026-08-27  UST 30Y  5.19%  +1.0bp  확인"
+            "2026-08-31  UST 2Y   4.34%  +0.0bp  확인",
+            "2026-08-31  UST 5Y   4.49%  +1.0bp  확인",
+            "2026-08-31  UST 10Y  4.75%  +2.0bp  확인",
+            "2026-08-31  UST 30Y  5.25%  +3.0bp  확인"
           ]
         },
         {
@@ -84,9 +84,9 @@ window.CTA_DASHBOARD_DATA = {
           "available": 3,
           "total": 3,
           "rows": [
-            "2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인",
-            "2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인",
-            "2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인"
+            "2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인",
+            "2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인",
+            "2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인"
           ]
         },
         {
@@ -98,7 +98,7 @@ window.CTA_DASHBOARD_DATA = {
           "rows": [
             "2026-08-25  WTI                83.90   -2.83%  -6.52%  확인",
             "2026-08-25  Brent              88.24   -4.82%  -6.13%  확인",
-            "2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시"
+            "2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시"
           ]
         },
         {
@@ -108,47 +108,49 @@ window.CTA_DASHBOARD_DATA = {
           "available": 1,
           "total": 1,
           "rows": [
-            "2026-08-27  VIX  14.51  -4.60%  -8.45%  확인"
+            "2026-08-31  VIX  14.92  +3.40%  -1.91%  확인"
           ]
         }
       ],
       "sourceStatus": [
         {
           "name": "Yahoo Finance",
-          "status": "ok",
-          "detail": "HTTP 200 application/json;charset=utf-8"
+          "status": "blocked",
+          "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
         },
         {
           "name": "FRED",
-          "status": "ok",
-          "detail": "HTTP 200 application/json; charset=UTF-8"
+          "status": "blocked",
+          "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
         },
         {
           "name": "CFTC",
-          "status": "ok",
-          "detail": "HTTP 200 text/html; charset=utf-8"
+          "status": "http_fail",
+          "detail": "ConnectError: All connection attempts failed"
         },
         {
           "name": "Stooq",
-          "status": "ok",
-          "detail": "HTTP 200 text/html; charset=utf-8"
+          "status": "blocked",
+          "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
         },
         {
           "name": "Alpha Vantage",
-          "status": "ok",
-          "detail": "HTTP 200 application/json"
+          "status": "blocked",
+          "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
         }
       ],
-      "recommendations": []
+      "recommendations": [
+        "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+      ]
     },
     "sections": {
-      "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
+      "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
       "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
-      "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
-      "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인     \n2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인     \n2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인     \n2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시    \n2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시    \n2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-27  UST 2Y   4.20%  +1.0bp  확인     \n2026-08-27  UST 5Y   4.38%  +1.0bp  확인     \n2026-08-27  UST 10Y  4.67%  +1.0bp  확인     \n2026-08-27  UST 30Y  5.19%  +1.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인     \n2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인     \n2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-27  VIX  14.51  -4.60%  -8.45%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
+      "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+      "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
     },
     "alertBullets": [
-      "CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)",
+      "CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
       "국면 판단: slow deleveraging / exposure reduction",
       "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
       "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
@@ -158,14 +160,14 @@ window.CTA_DASHBOARD_DATA = {
     {
       "name": "last_report_latest.txt",
       "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
-      "date": "2026-08-31",
+      "date": "2026-09-02",
       "trigger": "재차 발생",
       "regime": "slow deleveraging / exposure reduction",
-      "mtime": "2026-08-31T06:53:51+09:00",
+      "mtime": "2026-09-02T06:57:33+09:00",
       "size": 4700,
-      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인     \n2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인     \n2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인     \n2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시    \n2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시    \n2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-27  UST 2Y   4.20%  +1.0bp  확인     \n2026-08-27  UST 5Y   4.38%  +1.0bp  확인     \n2026-08-27  UST 10Y  4.67%  +1.0bp  확인     \n2026-08-27  UST 30Y  5.19%  +1.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인     \n2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인     \n2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-27  VIX  14.51  -4.60%  -8.45%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
       "summary": {
-        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)",
+        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
         "regime": "- 국면 판단: slow deleveraging / exposure reduction",
         "network": "정상/미표기",
         "confirmLimited": 4,
@@ -183,11 +185,11 @@ window.CTA_DASHBOARD_DATA = {
             "available": 5,
             "total": 5,
             "rows": [
-              "2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시",
-              "2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시",
-              "2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시",
-              "2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시",
-              "2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시"
+              "2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+              "2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시",
+              "2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+              "2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시",
+              "2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시"
             ]
           },
           {
@@ -211,12 +213,12 @@ window.CTA_DASHBOARD_DATA = {
             "available": 6,
             "total": 6,
             "rows": [
-              "2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인",
-              "2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인",
-              "2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인",
-              "2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시",
-              "2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시",
-              "2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인"
+              "2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인",
+              "2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인",
+              "2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인",
+              "2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시",
+              "2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시",
+              "2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인"
             ]
           },
           {
@@ -226,10 +228,10 @@ window.CTA_DASHBOARD_DATA = {
             "available": 4,
             "total": 4,
             "rows": [
-              "2026-08-27  UST 2Y   4.20%  +1.0bp  확인",
-              "2026-08-27  UST 5Y   4.38%  +1.0bp  확인",
-              "2026-08-27  UST 10Y  4.67%  +1.0bp  확인",
-              "2026-08-27  UST 30Y  5.19%  +1.0bp  확인"
+              "2026-08-31  UST 2Y   4.34%  +0.0bp  확인",
+              "2026-08-31  UST 5Y   4.49%  +1.0bp  확인",
+              "2026-08-31  UST 10Y  4.75%  +2.0bp  확인",
+              "2026-08-31  UST 30Y  5.25%  +3.0bp  확인"
             ]
           },
           {
@@ -239,9 +241,9 @@ window.CTA_DASHBOARD_DATA = {
             "available": 3,
             "total": 3,
             "rows": [
-              "2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인",
-              "2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인",
-              "2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인"
+              "2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인",
+              "2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인",
+              "2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인"
             ]
           },
           {
@@ -253,7 +255,7 @@ window.CTA_DASHBOARD_DATA = {
             "rows": [
               "2026-08-25  WTI                83.90   -2.83%  -6.52%  확인",
               "2026-08-25  Brent              88.24   -4.82%  -6.13%  확인",
-              "2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시"
+              "2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시"
             ]
           },
           {
@@ -263,47 +265,205 @@ window.CTA_DASHBOARD_DATA = {
             "available": 1,
             "total": 1,
             "rows": [
-              "2026-08-27  VIX  14.51  -4.60%  -8.45%  확인"
+              "2026-08-31  VIX  14.92  +3.40%  -1.91%  확인"
             ]
           }
         ],
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
-        "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
+        "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
         "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
-        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
-        "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-28  S&P 500             7711.76   -0.25%  +0.45%  확인     \n2026-08-28  Nasdaq 100          29433.43  -0.70%  +0.77%  확인     \n2026-08-28  Dow                 53559.99  -0.02%  -0.03%  확인     \n2026-08-28  Russell 2000        295.75    -1.35%  -1.16%  프록시    \n2026-08-28  STOXX 600 (proxy:…  91.98     -0.33%  -1.30%  프록시    \n2026-08-28  Nikkei 225          66405.56  +0.41%  +0.83%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-27  UST 2Y   4.20%  +1.0bp  확인     \n2026-08-27  UST 5Y   4.38%  +1.0bp  확인     \n2026-08-27  UST 10Y  4.67%  +1.0bp  확인     \n2026-08-27  UST 30Y  5.19%  +1.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-21  DXY (proxy: DTWEX…  118.06  -0.16%  -0.77%  확인     \n2026-08-21  EURUSD              1.17    +0.04%  +0.90%  확인     \n2026-08-21  USDJPY              158.91  +0.04%  -0.42%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-08-28  Gold (proxy: GLD)  408.89  -3.24%  -4.48%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-27  VIX  14.51  -4.60%  -8.45%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
+        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+        "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
       },
       "alertBullets": [
-        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-08-31)",
+        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
+        "국면 판단: slow deleveraging / exposure reduction",
+        "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
+        "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
+      ]
+    },
+    {
+      "name": "last_report_20260902.txt",
+      "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
+      "date": "2026-09-02",
+      "trigger": "재차 발생",
+      "regime": "slow deleveraging / exposure reduction",
+      "mtime": "2026-09-02T06:57:33+09:00",
+      "size": 4700,
+      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+      "summary": {
+        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
+        "regime": "- 국면 판단: slow deleveraging / exposure reduction",
+        "network": "정상/미표기",
+        "confirmLimited": 4,
+        "proxy": 19,
+        "availableRows": 27,
+        "totalRows": 27,
+        "coveragePct": 100.0
+      },
+      "dashboard": {
+        "groups": [
+          {
+            "name": "Daily CTA Proxy",
+            "sourceType": "official/manual/proxy",
+            "status": "ok",
+            "available": 5,
+            "total": 5,
+            "rows": [
+              "2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+              "2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시",
+              "2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시",
+              "2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시",
+              "2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시"
+            ]
+          },
+          {
+            "name": "Weekly COT",
+            "sourceType": "official/CFTC",
+            "status": "ok",
+            "available": 5,
+            "total": 5,
+            "rows": [
+              "2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인",
+              "2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인",
+              "2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인",
+              "2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인",
+              "2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인"
+            ]
+          },
+          {
+            "name": "Overnight Index",
+            "sourceType": "proxy quotes",
+            "status": "ok",
+            "available": 6,
+            "total": 6,
+            "rows": [
+              "2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인",
+              "2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인",
+              "2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인",
+              "2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시",
+              "2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시",
+              "2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인"
+            ]
+          },
+          {
+            "name": "UST Rates",
+            "sourceType": "official/FRED",
+            "status": "ok",
+            "available": 4,
+            "total": 4,
+            "rows": [
+              "2026-08-31  UST 2Y   4.34%  +0.0bp  확인",
+              "2026-08-31  UST 5Y   4.49%  +1.0bp  확인",
+              "2026-08-31  UST 10Y  4.75%  +2.0bp  확인",
+              "2026-08-31  UST 30Y  5.25%  +3.0bp  확인"
+            ]
+          },
+          {
+            "name": "FX",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 3,
+            "total": 3,
+            "rows": [
+              "2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인",
+              "2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인",
+              "2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인"
+            ]
+          },
+          {
+            "name": "Commodities",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 3,
+            "total": 3,
+            "rows": [
+              "2026-08-25  WTI                83.90   -2.83%  -6.52%  확인",
+              "2026-08-25  Brent              88.24   -4.82%  -6.13%  확인",
+              "2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시"
+            ]
+          },
+          {
+            "name": "Volatility",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 1,
+            "total": 1,
+            "rows": [
+              "2026-08-31  VIX  14.92  +3.40%  -1.91%  확인"
+            ]
+          }
+        ],
+        "sourceStatus": [
+          {
+            "name": "Yahoo Finance",
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
+          },
+          {
+            "name": "FRED",
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
+          },
+          {
+            "name": "CFTC",
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
+          },
+          {
+            "name": "Stooq",
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
+          },
+          {
+            "name": "Alpha Vantage",
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
+          }
+        ],
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
+      },
+      "sections": {
+        "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-09-01  SG CTA Trend Index (p…  104.14  +1.80%  +3.53%  +5.06%  1.75  프록시    \n2026-09-01  SG Short-Term Traders…  31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  Barclay BTOP50 (proxy…  106.24  +1.24%  +2.36%  +3.73%  1.67  프록시    \n2026-09-01  DBMF ETF                31.60   +0.70%  +1.22%  +1.90%  1.09  프록시    \n2026-09-01  KMLM ETF                30.43   +1.77%  +3.50%  +5.59%  1.82  프록시    \n2026-09-01  Simplify CTA ETF (pro…  29.10   +2.94%  +5.90%  +7.74%  1.69  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
+        "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %          Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ---------  -----  -------  -------\n2026-08-25  S&P 500 (ES)    5,594       -158,090  -96.6%     -0.68  ❌        확인     \n2026-08-25  USD Index (DX)  9,189       +1,077    +13.3%     +0.22  ❌        확인     \n2026-08-25  UST 10Y         -129,803    -130,917  -11752.0%  -1.19  부분 ✔     확인     \n2026-08-25  UST 2Y          86,016      -1,179    -1.4%      -0.39  ❌        확인     \n2026-08-25  UST 5Y          -8,676      +4,619    +34.7%     +0.60  ❌        확인     \n2026-08-25  UST 30Y         -372,157    +476,831  +56.2%     +1.09  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
+        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+        "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-08-31  S&P 500             7686.14   -0.33%  +0.14%  확인     \n2026-08-31  Nasdaq 100          29456.97  +0.08%  +0.80%  확인     \n2026-08-31  Dow                 53185.90  -0.70%  -0.52%  확인     \n2026-09-01  Russell 2000        290.63    -1.12%  -3.06%  프록시    \n2026-09-01  STOXX 600 (proxy:…  90.72     -1.02%  -1.69%  프록시    \n2026-09-01  Nikkei 225          66215.34  -0.15%  +0.13%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1      Confirm\n----------  -------  -----  ------  -------\n2026-08-31  UST 2Y   4.34%  +0.0bp  확인     \n2026-08-31  UST 5Y   4.49%  +1.0bp  확인     \n2026-08-31  UST 10Y  4.75%  +2.0bp  확인     \n2026-08-31  UST 30Y  5.25%  +3.0bp  확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-08-28  DXY (proxy: DTWEX…  118.75  +0.33%  +0.44%  확인     \n2026-08-28  EURUSD              1.16    -0.48%  -0.64%  확인     \n2026-08-28  USDJPY              159.97  +0.45%  +0.48%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-08-25  WTI                83.90   -2.83%  -6.52%  확인     \n2026-08-25  Brent              88.24   -4.82%  -6.13%  확인     \n2026-09-01  Gold (proxy: GLD)  396.84  -2.84%  -6.10%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1      D3      Confirm\n----------  ---  -----  ------  ------  -------\n2026-08-31  VIX  14.92  +3.40%  -1.91%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
+      },
+      "alertBullets": [
+        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-09-02)",
         "국면 판단: slow deleveraging / exposure reduction",
         "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
         "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
@@ -424,31 +584,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -578,31 +740,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.70  +0.53%  +2.01%  -0.84%  0.51  프록시    \n2026-08-28  SG Short-Term Traders…  31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.29  +0.71%  +2.07%  +0.56%  0.94  프록시    \n2026-08-28  DBMF ETF                31.41   +0.61%  +1.29%  +0.13%  0.94  프록시    \n2026-08-28  KMLM ETF                29.64   +0.82%  +2.85%  +0.99%  0.81  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.52   +0.15%  +1.90%  -3.60%  0.11  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -732,31 +896,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-28  SG CTA Trend Index (p…  101.73  +0.55%  +2.03%  -0.81%  0.53  프록시    \n2026-08-28  SG Short-Term Traders…  31.40   +0.58%  +1.26%  +0.10%  0.89  프록시    \n2026-08-28  Barclay BTOP50 (proxy…  105.30  +0.73%  +2.08%  +0.58%  0.96  프록시    \n2026-08-28  DBMF ETF                31.40   +0.58%  +1.26%  +0.10%  0.89  프록시    \n2026-08-28  KMLM ETF                29.66   +0.88%  +2.91%  +1.06%  0.89  프록시    \n2026-08-28  Simplify CTA ETF (pro…  27.53   +0.18%  +1.93%  -3.57%  0.13  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -886,31 +1052,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-27  SG CTA Trend Index (p…  98.29   +1.03%  -0.22%  -0.98%  1.01  프록시    \n2026-08-27  SG Short-Term Traders…  31.22   +0.45%  -0.10%  +0.19%  0.69  프록시    \n2026-08-27  Barclay BTOP50 (proxy…  102.74  +0.57%  +0.33%  +0.23%  0.75  프록시    \n2026-08-27  DBMF ETF                31.22   +0.45%  -0.10%  +0.19%  0.69  프록시    \n2026-08-27  KMLM ETF                29.32   +0.69%  +0.76%  +0.27%  0.69  프록시    \n2026-08-27  Simplify CTA ETF (pro…  27.52   +1.95%  -1.34%  -3.39%  1.14  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1040,31 +1208,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-26  SG CTA Trend Index (p…  97.09   +0.39%  -2.42%  -1.08%  0.40  프록시    \n2026-08-26  SG Short-Term Traders…  31.07   +0.21%  -0.94%  +0.44%  0.31  프록시    \n2026-08-26  Barclay BTOP50 (proxy…  102.20  +0.62%  -0.87%  +0.40%  0.83  프록시    \n2026-08-26  DBMF ETF                31.07   +0.21%  -0.94%  +0.44%  0.31  프록시    \n2026-08-26  KMLM ETF                29.11   +1.02%  -0.80%  +0.36%  1.06  프록시    \n2026-08-26  Simplify CTA ETF (pro…  26.99   -0.07%  -5.46%  -4.02%  0.03  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1194,31 +1364,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-25  SG CTA Trend Index (p…  97.15   -1.74%  -2.49%  -2.09%  -1.69  프록시    \n2026-08-25  SG Short-Term Traders…  31.00   -0.78%  -0.50%  -0.85%  -1.34  프록시    \n2026-08-25  Barclay BTOP50 (proxy…  101.90  -1.02%  -1.11%  -1.49%  -1.46  프록시    \n2026-08-25  DBMF ETF                31.00   -0.78%  -0.50%  -0.85%  -1.34  프록시    \n2026-08-25  KMLM ETF                28.73   -1.25%  -1.73%  -2.13%  -1.36  프록시    \n2026-08-25  Simplify CTA ETF (pro…  27.00   -3.19%  -5.20%  -3.33%  -1.75  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1348,31 +1520,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-24  SG CTA Trend Index (p…  100.81  -1.19%  +0.16%  -0.69%  -1.17  프록시    \n2026-08-24  SG Short-Term Traders…  31.25   -0.40%  +0.99%  -0.94%  -0.72  프록시    \n2026-08-24  Barclay BTOP50 (proxy…  103.74  -0.64%  +0.63%  -1.08%  -0.96  프록시    \n2026-08-24  DBMF ETF                31.25   -0.40%  +0.99%  -0.94%  -0.72  프록시    \n2026-08-24  KMLM ETF                29.09   -0.89%  +0.28%  -1.22%  -0.99  프록시    \n2026-08-24  Simplify CTA ETF (pro…  27.90   -2.28%  -0.78%  +0.07%  -1.24  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1502,31 +1676,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-21  SG CTA Trend Index (p…  100.99  +0.43%  +0.83%  +1.91%  0.40  프록시    \n2026-08-21  SG Short-Term Traders…  31.37   +0.67%  +0.32%  +0.06%  1.05  프록시    \n2026-08-21  Barclay BTOP50 (proxy…  104.13  +0.53%  +0.14%  +0.39%  0.68  프록시    \n2026-08-21  DBMF ETF                31.37   +0.67%  +0.32%  +0.06%  1.05  프록시    \n2026-08-21  KMLM ETF                29.35   +0.38%  -0.03%  +0.72%  0.35  프록시    \n2026-08-21  Simplify CTA ETF (pro…  28.55   +0.25%  +2.22%  +5.00%  0.16  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1656,31 +1832,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-21  SG CTA Trend Index (p…  100.99  +0.43%  +0.83%  +1.91%  0.40  프록시    \n2026-08-21  SG Short-Term Traders…  31.37   +0.67%  +0.32%  +0.06%  1.05  프록시    \n2026-08-21  Barclay BTOP50 (proxy…  104.13  +0.53%  +0.14%  +0.39%  0.68  프록시    \n2026-08-21  DBMF ETF                31.37   +0.67%  +0.32%  +0.06%  1.05  프록시    \n2026-08-21  KMLM ETF                29.35   +0.38%  -0.03%  +0.72%  0.35  프록시    \n2026-08-21  Simplify CTA ETF (pro…  28.55   +0.25%  +2.22%  +5.00%  0.16  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1810,31 +1988,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-21  SG CTA Trend Index (p…  100.95  +0.39%  +0.79%  +1.87%  0.36  프록시    \n2026-08-21  SG Short-Term Traders…  31.34   +0.58%  +0.22%  -0.03%  0.89  프록시    \n2026-08-21  Barclay BTOP50 (proxy…  104.04  +0.44%  +0.06%  +0.31%  0.56  프록시    \n2026-08-21  DBMF ETF                31.34   +0.58%  +0.22%  -0.03%  0.89  프록시    \n2026-08-21  KMLM ETF                29.33   +0.31%  -0.10%  +0.65%  0.28  프록시    \n2026-08-21  Simplify CTA ETF (pro…  28.56   +0.28%  +2.26%  +5.04%  0.18  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -1964,31 +2144,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-20  SG CTA Trend Index (p…  99.93   +0.90%  +0.04%  +2.19%  0.87  프록시    \n2026-08-20  SG Short-Term Traders…  31.16   +0.69%  -1.22%  -0.53%  1.11  프록시    \n2026-08-20  Barclay BTOP50 (proxy…  103.25  +0.67%  -1.03%  +0.43%  0.90  프록시    \n2026-08-20  DBMF ETF                31.16   +0.69%  -1.22%  -0.53%  1.11  프록시    \n2026-08-20  KMLM ETF                29.20   +0.65%  -0.85%  +1.39%  0.66  프록시    \n2026-08-20  Simplify CTA ETF (pro…  28.50   +1.35%  +2.22%  +5.79%  0.77  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2118,31 +2300,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-19  SG CTA Trend Index (p…  99.73   -0.60%  +0.46%  +0.71%  -0.58  프록시    \n2026-08-19  SG Short-Term Traders…  30.95   -1.04%  -1.29%  -1.54%  -1.81  프록시    \n2026-08-19  Barclay BTOP50 (proxy…  102.92  -1.12%  -0.87%  -0.58%  -1.64  프록시    \n2026-08-19  DBMF ETF                30.95   -1.04%  -1.29%  -1.54%  -1.81  프록시    \n2026-08-19  KMLM ETF                29.01   -1.19%  -0.45%  +0.38%  -1.31  프록시    \n2026-08-19  Simplify CTA ETF (pro…  28.05   +0.43%  +3.16%  +3.31%  0.27   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2272,31 +2456,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-18  SG CTA Trend Index (p…  102.06  -0.26%  +1.88%  +1.53%  -0.27  프록시    \n2026-08-18  SG Short-Term Traders…  31.26   -0.89%  -0.19%  -0.22%  -1.58  프록시    \n2026-08-18  Barclay BTOP50 (proxy…  105.34  -0.59%  +0.88%  +0.81%  -0.91  프록시    \n2026-08-18  DBMF ETF                31.26   -0.89%  -0.19%  -0.22%  -1.58  프록시    \n2026-08-18  KMLM ETF                29.36   -0.29%  +1.96%  +1.86%  -0.37  프록시    \n2026-08-18  Simplify CTA ETF (pro…  27.99   +0.39%  +3.90%  +2.98%  0.23   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2426,31 +2612,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-17  SG CTA Trend Index (p…  102.93  +1.36%  +1.61%  +2.04%  1.28  프록시    \n2026-08-17  SG Short-Term Traders…  31.50   +0.46%  +0.21%  +0.56%  0.69  프록시    \n2026-08-17  Barclay BTOP50 (proxy…  106.29  +0.75%  +1.04%  +1.40%  0.98  프록시    \n2026-08-17  DBMF ETF                31.50   +0.46%  +0.21%  +0.56%  0.69  프록시    \n2026-08-17  KMLM ETF                29.45   +1.05%  +1.89%  +2.24%  1.03  프록시    \n2026-08-17  Simplify CTA ETF (pro…  27.89   +2.57%  +2.73%  +3.33%  1.42  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2580,31 +2768,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-14  SG CTA Trend Index (p…  101.55  +0.73%  +0.39%  +3.25%  0.69  프록시    \n2026-08-14  SG Short-Term Traders…  31.35   +0.10%  +0.06%  +1.36%  0.07  프록시    \n2026-08-14  Barclay BTOP50 (proxy…  105.79  +0.64%  +0.57%  +2.33%  0.83  프록시    \n2026-08-14  DBMF ETF                31.35   +0.10%  +0.06%  +1.36%  0.07  프록시    \n2026-08-14  KMLM ETF                29.14   +1.18%  +1.08%  +3.30%  1.19  프록시    \n2026-08-14  Simplify CTA ETF (pro…  27.19   +0.93%  +0.04%  +5.10%  0.54  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2734,31 +2924,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-14  SG CTA Trend Index (p…  101.55  +0.73%  +0.39%  +3.25%  0.69  프록시    \n2026-08-14  SG Short-Term Traders…  31.35   +0.10%  +0.06%  +1.36%  0.07  프록시    \n2026-08-14  Barclay BTOP50 (proxy…  105.79  +0.64%  +0.57%  +2.33%  0.83  프록시    \n2026-08-14  DBMF ETF                31.35   +0.10%  +0.06%  +1.36%  0.07  프록시    \n2026-08-14  KMLM ETF                29.14   +1.18%  +1.08%  +3.30%  1.19  프록시    \n2026-08-14  Simplify CTA ETF (pro…  27.19   +0.93%  +0.04%  +5.10%  0.54  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -2888,31 +3080,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-14  SG CTA Trend Index (p…  101.53  +0.72%  +0.37%  +3.23%  0.67  프록시    \n2026-08-14  SG Short-Term Traders…  31.36   +0.13%  +0.10%  +1.39%  0.12  프록시    \n2026-08-14  Barclay BTOP50 (proxy…  105.78  +0.63%  +0.56%  +2.31%  0.81  프록시    \n2026-08-14  DBMF ETF                31.36   +0.13%  +0.10%  +1.39%  0.12  프록시    \n2026-08-14  KMLM ETF                29.12   +1.13%  +1.02%  +3.24%  1.14  프록시    \n2026-08-14  Simplify CTA ETF (pro…  27.18   +0.89%  +0.00%  +5.06%  0.52  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3042,31 +3236,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-13  SG CTA Trend Index (p…  101.57  -0.52%  -0.09%  +1.73%  -0.52  프록시    \n2026-08-13  SG Short-Term Traders…  31.32   -0.35%  +0.00%  +1.23%  -0.69  프록시    \n2026-08-13  Barclay BTOP50 (proxy…  105.70  -0.36%  -0.01%  +0.94%  -0.59  프록시    \n2026-08-13  DBMF ETF                31.32   -0.35%  +0.00%  +1.23%  -0.69  프록시    \n2026-08-13  KMLM ETF                28.80   -0.36%  -0.02%  +0.65%  -0.45  프록시    \n2026-08-13  Simplify CTA ETF (pro…  26.92   -0.85%  -0.26%  +3.30%  -0.43  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3196,31 +3392,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-12  SG CTA Trend Index (p…  99.31   +0.11%  +2.96%  +3.48%  0.10  프록시    \n2026-08-12  SG Short-Term Traders…  31.42   +0.29%  +1.58%  +2.35%  0.39  프록시    \n2026-08-12  Barclay BTOP50 (proxy…  104.35  +0.20%  +1.94%  +2.02%  0.21  프록시    \n2026-08-12  DBMF ETF                31.42   +0.29%  +1.58%  +2.35%  0.39  프록시    \n2026-08-12  KMLM ETF                28.86   +0.10%  +2.30%  +1.69%  0.07  프록시    \n2026-08-12  Simplify CTA ETF (pro…  27.16   -0.07%  +4.99%  +6.43%  0.01  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3350,31 +3548,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-11  SG CTA Trend Index (p…  98.93   +0.28%  +2.10%  +3.51%  0.26   프록시    \n2026-08-11  SG Short-Term Traders…  31.32   +0.02%  +1.24%  +2.07%  -0.03  프록시    \n2026-08-11  Barclay BTOP50 (proxy…  103.62  +0.03%  +0.98%  +1.86%  -0.01  프록시    \n2026-08-11  DBMF ETF                31.32   +0.02%  +1.24%  +2.07%  -0.03  프록시    \n2026-08-11  KMLM ETF                28.82   +0.05%  +0.72%  +1.64%  0.01   프록시    \n2026-08-11  Simplify CTA ETF (pro…  27.20   +0.76%  +4.36%  +6.86%  0.45   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3504,31 +3704,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-10  SG CTA Trend Index (p…  97.19   +2.62%  +3.14%  +1.90%  2.52  프록시    \n2026-08-10  SG Short-Term Traders…  31.33   +1.29%  +2.05%  +2.29%  2.01  프록시    \n2026-08-10  Barclay BTOP50 (proxy…  102.03  +1.69%  +1.77%  +1.30%  2.33  프록시    \n2026-08-10  DBMF ETF                31.33   +1.29%  +2.05%  +2.29%  2.01  프록시    \n2026-08-10  KMLM ETF                28.80   +2.09%  +1.48%  +0.31%  2.17  프록시    \n2026-08-10  Simplify CTA ETF (pro…  27.03   +4.48%  +5.92%  +3.05%  2.50  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3658,31 +3860,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value  D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  -----  ------  ------  ------  -----  -------\n2026-08-07  SG CTA Trend Index (p…  94.57  -0.72%  +0.65%  -2.80%  -0.64  프록시    \n2026-08-07  SG Short-Term Traders…  30.93  -0.03%  +0.78%  +0.03%  -0.05  프록시    \n2026-08-07  Barclay BTOP50 (proxy…  99.81  -0.72%  +0.14%  -1.87%  -1.00  프록시    \n2026-08-07  DBMF ETF                30.93  -0.03%  +0.78%  +0.03%  -0.05  프록시    \n2026-08-07  KMLM ETF                28.21  -1.40%  -0.49%  -3.75%  -1.49  프록시    \n2026-08-07  Simplify CTA ETF (pro…  25.87  -0.73%  +1.65%  -4.68%  -0.31  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3812,31 +4016,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value  D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  -----  ------  ------  ------  -----  -------\n2026-08-07  SG CTA Trend Index (p…  94.57  -0.72%  +0.65%  -2.80%  -0.64  프록시    \n2026-08-07  SG Short-Term Traders…  30.93  -0.03%  +0.78%  +0.03%  -0.05  프록시    \n2026-08-07  Barclay BTOP50 (proxy…  99.81  -0.72%  +0.14%  -1.87%  -1.00  프록시    \n2026-08-07  DBMF ETF                30.93  -0.03%  +0.78%  +0.03%  -0.05  프록시    \n2026-08-07  KMLM ETF                28.21  -1.40%  -0.49%  -3.75%  -1.49  프록시    \n2026-08-07  Simplify CTA ETF (pro…  25.87  -0.73%  +1.65%  -4.68%  -0.31  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -3966,31 +4172,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value  D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  -----  ------  ------  ------  -----  -------\n2026-08-07  SG CTA Trend Index (p…  94.60  -0.69%  +0.67%  -2.78%  -0.61  프록시    \n2026-08-07  SG Short-Term Traders…  30.92  -0.06%  +0.75%  +0.00%  -0.10  프록시    \n2026-08-07  Barclay BTOP50 (proxy…  99.82  -0.71%  +0.15%  -1.86%  -0.99  프록시    \n2026-08-07  DBMF ETF                30.92  -0.06%  +0.75%  +0.00%  -0.10  프록시    \n2026-08-07  KMLM ETF                28.23  -1.35%  -0.44%  -3.70%  -1.44  프록시    \n2026-08-07  Simplify CTA ETF (pro…  25.89  -0.67%  +1.71%  -4.62%  -0.28  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4120,31 +4328,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-08-06  SG CTA Trend Index (p…  96.62   +1.19%  -0.04%  -1.85%  1.15  프록시    \n2026-08-06  SG Short-Term Traders…  30.94   +0.78%  +1.01%  +0.32%  1.21  프록시    \n2026-08-06  Barclay BTOP50 (proxy…  101.44  +0.76%  +0.30%  -0.95%  1.04  프록시    \n2026-08-06  DBMF ETF                30.94   +0.78%  +1.01%  +0.32%  1.21  프록시    \n2026-08-06  KMLM ETF                28.59   +0.74%  -0.42%  -2.22%  0.76  프록시    \n2026-08-06  Simplify CTA ETF (pro…  26.04   +2.04%  -0.72%  -3.66%  1.17  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4274,31 +4484,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-05  SG CTA Trend Index (p…  95.06   +0.07%  -3.36%  -3.81%  0.11   프록시    \n2026-08-05  SG Short-Term Traders…  30.70   +0.02%  -0.73%  -1.08%  0.02   프록시    \n2026-08-05  Barclay BTOP50 (proxy…  100.92  -0.04%  -2.05%  -2.62%  -0.07  프록시    \n2026-08-05  DBMF ETF                30.70   +0.02%  -0.73%  -1.08%  0.02   프록시    \n2026-08-05  KMLM ETF                28.32   -0.09%  -3.36%  -4.15%  -0.12  프록시    \n2026-08-05  Simplify CTA ETF (pro…  25.52   +0.28%  -5.97%  -6.18%  0.23   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4428,31 +4640,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-04  SG CTA Trend Index (p…  94.53   -1.31%  -3.11%  -2.43%  -1.21  프록시    \n2026-08-04  SG Short-Term Traders…  30.68   +0.18%  -0.50%  -1.14%  0.29   프록시    \n2026-08-04  Barclay BTOP50 (proxy…  100.27  -0.52%  -1.76%  -2.06%  -0.73  프록시    \n2026-08-04  DBMF ETF                30.68   +0.18%  -0.50%  -1.14%  0.29   프록시    \n2026-08-04  KMLM ETF                28.36   -1.22%  -3.01%  -2.98%  -1.32  프록시    \n2026-08-04  Simplify CTA ETF (pro…  25.47   -2.90%  -5.77%  -3.23%  -1.49  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4582,31 +4796,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-08-03  SG CTA Trend Index (p…  96.25   -2.15%  -2.60%  -2.11%  -2.06  프록시    \n2026-08-03  SG Short-Term Traders…  30.63   -0.94%  -1.29%  -2.05%  -1.46  프록시    \n2026-08-03  Barclay BTOP50 (proxy…  101.15  -1.54%  -2.12%  -2.14%  -2.21  프록시    \n2026-08-03  DBMF ETF                30.63   -0.94%  -1.29%  -2.05%  -1.46  프록시    \n2026-08-03  KMLM ETF                28.68   -2.15%  -2.94%  -2.25%  -2.39  프록시    \n2026-08-03  Simplify CTA ETF (pro…  26.23   -3.35%  -3.57%  -2.09%  -1.78  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4736,31 +4952,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-31  SG CTA Trend Index (p…  98.39   +0.30%  +1.00%  -2.01%  0.31  프록시    \n2026-07-31  SG Short-Term Traders…  30.92   +0.26%  -0.39%  -1.56%  0.40  프록시    \n2026-07-31  Barclay BTOP50 (proxy…  103.04  +0.25%  -0.06%  -1.30%  0.31  프록시    \n2026-07-31  DBMF ETF                30.92   +0.26%  -0.39%  -1.56%  0.40  프록시    \n2026-07-31  KMLM ETF                29.31   +0.24%  +0.27%  -1.05%  0.19  프록시    \n2026-07-31  Simplify CTA ETF (pro…  27.14   +0.41%  +3.12%  -3.49%  0.28  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -4890,31 +5108,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-31  SG CTA Trend Index (p…  98.39   +0.30%  +1.00%  -2.01%  0.31  프록시    \n2026-07-31  SG Short-Term Traders…  30.92   +0.26%  -0.39%  -1.56%  0.40  프록시    \n2026-07-31  Barclay BTOP50 (proxy…  103.04  +0.25%  -0.06%  -1.30%  0.31  프록시    \n2026-07-31  DBMF ETF                30.92   +0.26%  -0.39%  -1.56%  0.40  프록시    \n2026-07-31  KMLM ETF                29.31   +0.24%  +0.27%  -1.05%  0.19  프록시    \n2026-07-31  Simplify CTA ETF (pro…  27.14   +0.41%  +3.12%  -3.49%  0.28  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5044,31 +5264,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-31  SG CTA Trend Index (p…  98.43   +0.34%  +1.04%  -1.97%  0.34  프록시    \n2026-07-31  SG Short-Term Traders…  30.91   +0.24%  -0.40%  -1.58%  0.38  프록시    \n2026-07-31  Barclay BTOP50 (proxy…  103.09  +0.29%  -0.01%  -1.26%  0.37  프록시    \n2026-07-31  DBMF ETF                30.91   +0.24%  -0.40%  -1.58%  0.38  프록시    \n2026-07-31  KMLM ETF                29.34   +0.34%  +0.38%  -0.95%  0.30  프록시    \n2026-07-31  Simplify CTA ETF (pro…  27.15   +0.44%  +3.15%  -3.45%  0.30  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5198,31 +5420,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-30  SG CTA Trend Index (p…  98.78   -0.79%  -0.30%  -3.29%  -0.76  프록시    \n2026-07-30  SG Short-Term Traders…  30.84   -0.63%  -1.39%  -2.08%  -0.99  프록시    \n2026-07-30  Barclay BTOP50 (proxy…  103.27  -0.86%  -0.88%  -2.09%  -1.27  프록시    \n2026-07-30  DBMF ETF                30.84   -0.63%  -1.39%  -2.08%  -0.99  프록시    \n2026-07-30  KMLM ETF                29.23   -1.08%  -0.37%  -2.11%  -1.26  프록시    \n2026-07-30  Simplify CTA ETF (pro…  27.02   -0.66%  +0.86%  -5.72%  -0.31  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5352,31 +5576,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-29  SG CTA Trend Index (p…  99.39   +1.48%  -1.54%  -1.09%  1.46   프록시    \n2026-07-29  SG Short-Term Traders…  31.02   -0.06%  -1.24%  -1.18%  -0.12  프록시    \n2026-07-29  Barclay BTOP50 (proxy…  104.11  +0.51%  -0.75%  -0.44%  0.66   프록시    \n2026-07-29  DBMF ETF                31.02   -0.06%  -1.24%  -1.18%  -0.12  프록시    \n2026-07-29  KMLM ETF                29.55   +1.08%  -0.25%  +0.29%  1.10   프록시    \n2026-07-29  Simplify CTA ETF (pro…  27.22   +3.42%  -3.20%  -2.47%  1.97   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5506,31 +5732,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-28  SG CTA Trend Index (p…  98.86   -1.03%  -4.00%  -2.28%  -1.01  프록시    \n2026-07-28  SG Short-Term Traders…  31.04   -0.75%  -1.44%  -0.91%  -1.18  프록시    \n2026-07-28  Barclay BTOP50 (proxy…  104.86  -0.61%  -1.83%  -0.86%  -0.94  프록시    \n2026-07-28  DBMF ETF                31.04   -0.75%  -1.44%  -0.91%  -1.18  프록시    \n2026-07-28  KMLM ETF                29.20   -0.48%  -2.21%  -0.82%  -0.61  프록시    \n2026-07-28  Simplify CTA ETF (pro…  26.29   -1.87%  -8.27%  -5.12%  -0.99  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5660,31 +5888,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-27  SG CTA Trend Index (p…  99.33   -2.04%  -1.59%  -0.21%  -2.05  프록시    \n2026-07-27  SG Short-Term Traders…  31.25   -0.49%  -0.43%  +1.02%  -0.77  프록시    \n2026-07-27  Barclay BTOP50 (proxy…  104.69  -0.74%  -0.43%  +0.65%  -1.11  프록시    \n2026-07-27  DBMF ETF                31.25   -0.49%  -0.43%  +1.02%  -0.77  프록시    \n2026-07-27  KMLM ETF                29.33   -0.98%  -0.44%  +0.27%  -1.17  프록시    \n2026-07-27  Simplify CTA ETF (pro…  26.81   -4.66%  -3.94%  -1.97%  -2.67  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5814,31 +6044,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-24  SG CTA Trend Index (p…  102.63  -0.98%  +0.80%  +2.55%  -1.01  프록시    \n2026-07-24  SG Short-Term Traders…  31.41   -0.25%  +0.29%  +1.75%  -0.43  프록시    \n2026-07-24  Barclay BTOP50 (proxy…  106.63  -0.53%  +0.45%  +1.97%  -0.84  프록시    \n2026-07-24  DBMF ETF                31.41   -0.25%  +0.29%  +1.75%  -0.43  프록시    \n2026-07-24  KMLM ETF                29.62   -0.80%  +0.61%  +2.19%  -0.99  프록시    \n2026-07-24  Simplify CTA ETF (pro…  28.12   -1.88%  +1.48%  +3.69%  -1.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -5968,31 +6200,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-24  SG CTA Trend Index (p…  102.63  -0.98%  +0.80%  +2.55%  -1.01  프록시    \n2026-07-24  SG Short-Term Traders…  31.41   -0.25%  +0.29%  +1.75%  -0.43  프록시    \n2026-07-24  Barclay BTOP50 (proxy…  106.63  -0.53%  +0.45%  +1.97%  -0.84  프록시    \n2026-07-24  DBMF ETF                31.41   -0.25%  +0.29%  +1.75%  -0.43  프록시    \n2026-07-24  KMLM ETF                29.62   -0.80%  +0.61%  +2.19%  -0.99  프록시    \n2026-07-24  Simplify CTA ETF (pro…  28.12   -1.88%  +1.48%  +3.69%  -1.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6122,31 +6356,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-24  SG CTA Trend Index (p…  102.67  -0.94%  +0.84%  +2.59%  -0.97  프록시    \n2026-07-24  SG Short-Term Traders…  31.40   -0.29%  +0.26%  +1.72%  -0.48  프록시    \n2026-07-24  Barclay BTOP50 (proxy…  106.63  -0.53%  +0.45%  +1.97%  -0.84  프록시    \n2026-07-24  DBMF ETF                31.40   -0.29%  +0.26%  +1.72%  -0.48  프록시    \n2026-07-24  KMLM ETF                29.63   -0.77%  +0.65%  +2.23%  -0.96  프록시    \n2026-07-24  Simplify CTA ETF (pro…  28.16   -1.76%  +1.61%  +3.82%  -1.01  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6276,31 +6512,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-23  SG CTA Trend Index (p…  101.64  +1.47%  +2.90%  +4.39%  1.44  프록시    \n2026-07-23  SG Short-Term Traders…  31.48   +0.29%  +1.75%  +1.94%  0.37  프록시    \n2026-07-23  Barclay BTOP50 (proxy…  105.13  +0.88%  +1.98%  +2.59%  1.12  프록시    \n2026-07-23  DBMF ETF                31.48   +0.29%  +1.75%  +1.94%  0.37  프록시    \n2026-07-23  KMLM ETF                29.89   +1.48%  +2.21%  +3.23%  1.53  프록시    \n2026-07-23  Simplify CTA ETF (pro…  28.65   +2.65%  +4.75%  +8.07%  1.59  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6430,31 +6668,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-22  SG CTA Trend Index (p…  100.45  +0.51%  +2.25%  +2.69%  0.50  프록시    \n2026-07-22  SG Short-Term Traders…  31.41   +0.29%  +1.75%  +1.36%  0.38  프록시    \n2026-07-22  Barclay BTOP50 (proxy…  104.42  +0.28%  +1.80%  +1.87%  0.32  프록시    \n2026-07-22  DBMF ETF                31.41   +0.29%  +1.75%  +1.36%  0.38  프록시    \n2026-07-22  KMLM ETF                29.52   +0.27%  +1.85%  +2.39%  0.20  프록시    \n2026-07-22  Simplify CTA ETF (pro…  27.98   +0.97%  +3.17%  +4.33%  0.61  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6584,31 +6824,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-21  SG CTA Trend Index (p…  100.57  +1.06%  +2.53%  +2.07%  1.05  프록시    \n2026-07-21  SG Short-Term Traders…  31.32   +1.23%  +1.42%  +0.97%  1.66  프록시    \n2026-07-21  Barclay BTOP50 (proxy…  104.69  +0.94%  +1.54%  +1.58%  1.21  프록시    \n2026-07-21  DBMF ETF                31.32   +1.23%  +1.42%  +0.97%  1.66  프록시    \n2026-07-21  KMLM ETF                29.44   +0.65%  +1.66%  +2.19%  0.62  프록시    \n2026-07-21  Simplify CTA ETF (pro…  27.71   +1.32%  +4.53%  +3.05%  0.82  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6738,31 +6980,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-20  SG CTA Trend Index (p…  99.63   +0.66%  +1.09%  +1.56%  0.66  프록시    \n2026-07-20  SG Short-Term Traders…  30.94   +0.23%  -0.16%  -0.16%  0.32  프록시    \n2026-07-20  Barclay BTOP50 (proxy…  103.79  +0.57%  +0.65%  +0.89%  0.72  프록시    \n2026-07-20  DBMF ETF                30.94   +0.23%  -0.16%  -0.16%  0.32  프록시    \n2026-07-20  KMLM ETF                29.25   +0.91%  +1.46%  +1.95%  0.92  프록시    \n2026-07-20  Simplify CTA ETF (pro…  27.35   +0.85%  +1.98%  +2.90%  0.55  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -6892,31 +7136,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z    Confirm\n----------  ----------------------  ------  ------  ------  ------  -----  -------\n2026-07-17  SG CTA Trend Index (p…  99.28   +0.78%  +0.33%  +2.72%  0.79   프록시    \n2026-07-17  SG Short-Term Traders…  30.87   -0.03%  -0.48%  +0.23%  -0.04  프록시    \n2026-07-17  Barclay BTOP50 (proxy…  103.57  +0.03%  +0.06%  +1.68%  -0.02  프록시    \n2026-07-17  DBMF ETF                30.87   -0.03%  -0.48%  +0.23%  -0.04  프록시    \n2026-07-17  KMLM ETF                28.98   +0.09%  +0.61%  +3.15%  0.01   프록시    \n2026-07-17  Simplify CTA ETF (pro…  27.12   +2.30%  +0.86%  +4.79%  1.43   프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -7046,31 +7292,33 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
-        "recommendations": []
+        "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요."
+        ]
       },
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5      Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  ------  ----  -------\n2026-07-14  SG CTA Trend Index (p…  99.81   +0.56%  +2.33%  +2.73%  0.56  프록시    \n2026-07-14  SG Short-Term Traders…  31.02   +0.10%  +0.85%  +1.11%  0.11  프록시    \n2026-07-14  Barclay BTOP50 (proxy…  104.69  +0.26%  +1.69%  +2.44%  0.28  프록시    \n2026-07-14  DBMF ETF                31.02   +0.10%  +0.85%  +1.11%  0.11  프록시    \n2026-07-14  KMLM ETF                28.81   +0.42%  +2.53%  +3.78%  0.37  프록시    \n2026-07-14  Simplify CTA ETF (pro…  26.89   +1.17%  +3.62%  +3.30%  0.75  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
@@ -7200,23 +7448,23 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
@@ -7225,6 +7473,7 @@ window.CTA_DASHBOARD_DATA = {
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "ETF/지수 프록시 확인 제한을 줄이려면 .env에 ALPHA_VANTAGE_API_KEY를 추가하세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다."
         ]
@@ -7357,31 +7606,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -7515,31 +7765,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -7639,31 +7890,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -7763,31 +8015,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -7887,31 +8140,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8011,31 +8265,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8135,31 +8390,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8282,31 +8538,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8435,31 +8692,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8589,31 +8847,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8747,31 +9006,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
@@ -8905,31 +9165,32 @@ window.CTA_DASHBOARD_DATA = {
         "sourceStatus": [
           {
             "name": "Yahoo Finance",
-            "status": "ok",
-            "detail": "HTTP 200 application/json;charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "FRED",
-            "status": "ok",
-            "detail": "HTTP 200 application/json; charset=UTF-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "CFTC",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "http_fail",
+            "detail": "ConnectError: All connection attempts failed"
           },
           {
             "name": "Stooq",
-            "status": "ok",
-            "detail": "HTTP 200 text/html; charset=utf-8"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           },
           {
             "name": "Alpha Vantage",
-            "status": "ok",
-            "detail": "HTTP 200 application/json"
+            "status": "blocked",
+            "detail": "gaierror: [Errno 8] nodename nor servname provided, or not known"
           }
         ],
         "recommendations": [
+          "네트워크 가능한 로컬 터미널/서버에서 한 번 실행해 공식 데이터와 캐시를 채우세요.",
           "SG CTA/BTOP50은 data/cta_proxies.csv에 수동 값이 있으면 네트워크와 무관하게 살아납니다.",
           "COT는 CFTC 공식 주간 데이터라 네트워크 성공 후 캐시 재사용 전략이 가장 현실적입니다."
         ]
