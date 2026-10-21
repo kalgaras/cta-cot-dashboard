@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T06:50:02+09:00",
+  "checkedAt": "2026-10-22T06:50:02+09:00",
   "reachable": 5,
   "total": 5,
   "alphaVantageKeyConfigured": true,
@@ -16,7 +16,7 @@
       "host": "api.stlouisfed.org",
       "dns_ok": true,
       "http_ok": true,
-      "detail": "HTTP 200 application/json; charset=UTF-8"
+      "detail": "HTTP 200 text/html; charset=utf-8"
     },
     {
       "name": "CFTC",
