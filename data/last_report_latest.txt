@@ -27,7 +27,7 @@ Date        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Conf
 표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).
 
 ③ 종합 Alert
-- CTA 프록시 트리거: 재차 발생 (기준일: 2026-10-25)
+- CTA 프록시 트리거: 재차 발생 (기준일: 2026-10-26)
 - 국면 판단: slow deleveraging / exposure reduction
 - 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인
 - 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용
