@@ -1,16 +1,16 @@
 window.CTA_DASHBOARD_DATA = {
-  "generatedAt": "2026-11-08T07:03:52+09:00",
+  "generatedAt": "2026-11-09T07:03:50+09:00",
   "latest": {
     "name": "last_report_latest.txt",
     "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
-    "date": "2026-11-08",
+    "date": "2026-11-09",
     "trigger": "재차 발생",
     "regime": "slow deleveraging / exposure reduction",
-    "mtime": "2026-11-08T07:03:52+09:00",
+    "mtime": "2026-11-09T07:03:50+09:00",
     "size": 4692,
-    "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+    "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
     "summary": {
-      "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)",
+      "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
       "regime": "- 국면 판단: slow deleveraging / exposure reduction",
       "network": "정상/미표기",
       "confirmLimited": 4,
@@ -144,11 +144,11 @@ window.CTA_DASHBOARD_DATA = {
     "sections": {
       "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
       "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
-      "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+      "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
       "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
     },
     "alertBullets": [
-      "CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)",
+      "CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
       "국면 판단: slow deleveraging / exposure reduction",
       "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
       "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
@@ -158,14 +158,14 @@ window.CTA_DASHBOARD_DATA = {
     {
       "name": "last_report_latest.txt",
       "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
-      "date": "2026-11-08",
+      "date": "2026-11-09",
       "trigger": "재차 발생",
       "regime": "slow deleveraging / exposure reduction",
-      "mtime": "2026-11-08T07:03:52+09:00",
+      "mtime": "2026-11-09T07:03:50+09:00",
       "size": 4692,
-      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
       "summary": {
-        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)",
+        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
         "regime": "- 국면 판단: slow deleveraging / exposure reduction",
         "network": "정상/미표기",
         "confirmLimited": 4,
@@ -299,11 +299,165 @@ window.CTA_DASHBOARD_DATA = {
       "sections": {
         "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
         "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
-        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
         "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
       },
       "alertBullets": [
-        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-08)",
+        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
+        "국면 판단: slow deleveraging / exposure reduction",
+        "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
+        "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
+      ]
+    },
+    {
+      "name": "last_report_20261109.txt",
+      "title": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction",
+      "date": "2026-11-09",
+      "trigger": "재차 발생",
+      "regime": "slow deleveraging / exposure reduction",
+      "mtime": "2026-11-09T07:03:50+09:00",
+      "size": 4692,
+      "body": "CTA 포지셔닝 모니터 — Proxy Trigger 재차 발생 / slow deleveraging / exposure reduction\n\n① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.\n\n② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).\n\n③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용\n\n④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기.",
+      "summary": {
+        "cta": "- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
+        "regime": "- 국면 판단: slow deleveraging / exposure reduction",
+        "network": "정상/미표기",
+        "confirmLimited": 4,
+        "proxy": 19,
+        "availableRows": 27,
+        "totalRows": 27,
+        "coveragePct": 100.0
+      },
+      "dashboard": {
+        "groups": [
+          {
+            "name": "Daily CTA Proxy",
+            "sourceType": "official/manual/proxy",
+            "status": "ok",
+            "available": 5,
+            "total": 5,
+            "rows": [
+              "2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시",
+              "2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시",
+              "2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시",
+              "2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시",
+              "2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시"
+            ]
+          },
+          {
+            "name": "Weekly COT",
+            "sourceType": "official/CFTC",
+            "status": "ok",
+            "available": 5,
+            "total": 5,
+            "rows": [
+              "2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인",
+              "2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인",
+              "2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인",
+              "2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인",
+              "2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인"
+            ]
+          },
+          {
+            "name": "Overnight Index",
+            "sourceType": "proxy quotes",
+            "status": "ok",
+            "available": 6,
+            "total": 6,
+            "rows": [
+              "2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인",
+              "2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인",
+              "2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인",
+              "2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시",
+              "2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시",
+              "2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인"
+            ]
+          },
+          {
+            "name": "UST Rates",
+            "sourceType": "official/FRED",
+            "status": "ok",
+            "available": 4,
+            "total": 4,
+            "rows": [
+              "2026-11-05  UST 2Y   4.46%  -12.0bp  확인",
+              "2026-11-05  UST 5Y   4.59%  -10.0bp  확인",
+              "2026-11-05  UST 10Y  4.84%  -6.0bp   확인",
+              "2026-11-05  UST 30Y  5.25%  -3.0bp   확인"
+            ]
+          },
+          {
+            "name": "FX",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 3,
+            "total": 3,
+            "rows": [
+              "2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인",
+              "2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인",
+              "2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인"
+            ]
+          },
+          {
+            "name": "Commodities",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 3,
+            "total": 3,
+            "rows": [
+              "2026-11-03  WTI                99.64   -0.42%  -5.56%  확인",
+              "2026-11-03  Brent              107.03  -0.34%  -7.16%  확인",
+              "2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시"
+            ]
+          },
+          {
+            "name": "Volatility",
+            "sourceType": "official/proxy",
+            "status": "ok",
+            "available": 1,
+            "total": 1,
+            "rows": [
+              "2026-11-05  VIX  28.18  +69.66%  +33.24%  확인"
+            ]
+          }
+        ],
+        "sourceStatus": [
+          {
+            "name": "Yahoo Finance",
+            "status": "ok",
+            "detail": "HTTP 200 application/json;charset=utf-8"
+          },
+          {
+            "name": "FRED",
+            "status": "ok",
+            "detail": "HTTP 200 application/json; charset=UTF-8"
+          },
+          {
+            "name": "CFTC",
+            "status": "ok",
+            "detail": "HTTP 200 text/html; charset=utf-8"
+          },
+          {
+            "name": "Stooq",
+            "status": "http_fail",
+            "detail": "ConnectTimeout: "
+          },
+          {
+            "name": "Alpha Vantage",
+            "status": "ok",
+            "detail": "HTTP 200 application/json"
+          }
+        ],
+        "recommendations": []
+      },
+      "sections": {
+        "cta": "① DAILY CTA Proxy Trigger\n```\n기준일         Asset/Index             Value   D1 Δ%   D3      D5       Δ Z   Confirm\n----------  ----------------------  ------  ------  ------  -------  ----  -------\n2026-11-06  SG CTA Trend Index (p…  102.32  +0.62%  -3.63%  -6.15%   0.55  프록시    \n2026-11-06  SG Short-Term Traders…  31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  Barclay BTOP50 (proxy…  103.96  +0.85%  -2.66%  -3.91%   1.07  프록시    \n2026-11-06  DBMF ETF                31.48   +1.29%  -2.30%  -2.99%   1.82  프록시    \n2026-11-06  KMLM ETF                29.21   +0.41%  -3.02%  -4.82%   0.38  프록시    \n2026-11-06  Simplify CTA ETF (pro…  26.77   +0.15%  -5.57%  -10.59%  0.08  프록시    \n```\nTrigger 기준(프록시): D1≤-1% 또는 |Z|≥1, 3D≤-2%, 5D≤-3%.",
+        "cot": "② Weekly COT Signals (최신 CFTC 기준)\n```\nDate        Asset           Value(Net)  WoW Δ     %       Δ Z    Unwind?  Confirm\n----------  --------------  ----------  --------  ------  -----  -------  -------\n2026-11-03  S&P 500 (ES)    8,278       -183,695  -95.7%  -0.79  ❌        확인     \n2026-11-03  USD Index (DX)  3,311       +153      +4.8%   +0.02  ❌        확인     \n2026-11-03  UST 10Y         -114,574    -2,459    -2.2%   -0.01  ❌        확인     \n2026-11-03  UST 2Y          127,998     +551      +0.4%   -0.23  ❌        확인     \n2026-11-03  UST 5Y          32,981      -2,725    -7.6%   -0.47  ❌        확인     \n2026-11-03  UST 30Y         -258,101    +538,128  +67.6%  +1.22  ❌        확인     \n```\n표기: Unwind?는 WoW Δ의 하방 Z-score 기준(≤-1.5 ✔, ≤-1.0 부분 ✔).",
+        "alert": "③ 종합 Alert\n- CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)\n- 국면 판단: slow deleveraging / exposure reduction\n- 실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인\n- 데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용",
+        "market": "④ 간결한 일일 마켓 모니터(CTA 제외)\n(1) overnight 주요 지수 (프록시)\n```\n기준일         Index               Value     D1      D3      Confirm\n----------  ------------------  --------  ------  ------  -------\n2026-11-05  S&P 500             7353.73   -4.36%  -2.49%  확인     \n2026-11-06  Nasdaq 100          26989.99  +1.35%  -4.22%  확인     \n2026-11-06  Dow                 51285.73  -0.46%  -0.97%  확인     \n2026-11-06  Russell 2000        273.67    +0.99%  -2.19%  프록시    \n2026-11-06  STOXX 600 (proxy:…  87.31     -1.26%  -0.26%  프록시    \n2026-11-06  Nikkei 225          57434.77  -5.96%  -8.95%  확인     \n```\n(2) 금리 (FRED 공개 CSV)\n```\nDate        Rate     Yield  D1       Confirm\n----------  -------  -----  -------  -------\n2026-11-05  UST 2Y   4.46%  -12.0bp  확인     \n2026-11-05  UST 5Y   4.59%  -10.0bp  확인     \n2026-11-05  UST 10Y  4.84%  -6.0bp   확인     \n2026-11-05  UST 30Y  5.25%  -3.0bp   확인     \n```\n\n(3) FX (프록시)\n```\n기준일         FX                  Value   D1      D3      Confirm\n----------  ------------------  ------  ------  ------  -------\n2026-10-30  DXY (proxy: DTWEX…  121.67  -0.06%  +0.00%  확인     \n2026-10-30  EURUSD              1.12    -0.02%  +0.17%  확인     \n2026-10-30  USDJPY              157.47  -0.23%  -0.25%  확인     \n```\n(4) 원자재 (프록시)\n```\n기준일         Commodity          Value   D1      D3      Confirm\n----------  -----------------  ------  ------  ------  -------\n2026-11-03  WTI                99.64   -0.42%  -5.56%  확인     \n2026-11-03  Brent              107.03  -0.34%  -7.16%  확인     \n2026-11-06  Gold (proxy: GLD)  372.52  -0.79%  +3.69%  프록시    \n```\n(5) 주식 변동성 (프록시)\n```\n기준일         Vol  Value  D1       D3       Confirm\n----------  ---  -----  -------  -------  -------\n2026-11-05  VIX  28.18  +69.66%  +33.24%  확인     \n```\n메모: VVIX는 무료/공식 일봉 소스 미연동으로 핵심 coverage 계산에서 제외.\n(6) 미 증시 breadth: 확인 제한(소스 미연동)\n(7) 향후 24~48h 주요 이벤트(공식 일정): 없음/확인 제한\n(8) 실행 가능한 핵심 요약: 아래 Alert 참고\n\n데이터 소스/제약:\n- 일부 지수/ETF/FX/원자재는 무료 공개 소스를 프록시로 사용(리포트 내 Confirm=프록시).\n- COT는 CFTC 공개 데이터 접근 시에만 반영(실패 시 확인 제한).\n- 실시간/공식 소스 미확인 값은 추정처럼 쓰지 않고 ‘확인 제한/프록시’로 표기."
+      },
+      "alertBullets": [
+        "CTA 프록시 트리거: 재차 발생 (기준일: 2026-11-09)",
         "국면 판단: slow deleveraging / exposure reduction",
         "실행 포인트: 변동성/추세 훼손 신호(프록시)가 누적되는지 3~5일 창으로 재확인",
         "데이터 메모: S&P 500 (ES): CFTC COT Financial Futures (official zip) 사용 / USD Index (DX): CFTC COT Financial Futures (official zip) 사용"
